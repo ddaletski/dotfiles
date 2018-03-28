@@ -4,7 +4,7 @@
 
 
 # DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot i4lock xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager feh lemonbar fonts-font-awesome lxappearance
+# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot i4lock xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager feh fonts-font-awesome lxappearance py3status
 # https://github.com/karulont/i3lock-blur
 
 exec "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
@@ -21,7 +21,7 @@ set $right l
 # default apps
 set $terminal gnome-terminal
 set $filemgr nautilus
-set $browser vivaldi-stable
+set $browser google-chrome
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -54,7 +54,6 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id "rofi -theme dmenu -show run"
 bindsym $mod+Shift+d exec --no-startup-id "gksudo 'rofi -theme dmenu -show run'"
-
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -343,7 +342,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3status
+	status_command py3status
 	position bottom
 
 
