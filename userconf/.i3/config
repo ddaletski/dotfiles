@@ -3,7 +3,7 @@
 
 
 # DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager lxappearance feh
+# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager lxappearance feh nitrogen
 # https://github.com/guimeira/i3lock-fancy-multimonitor
 
 exec "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
@@ -293,7 +293,6 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id $lock
 
 # Autostart applications
-exec --no-startup-id feh --randomize /usr/share/backgrounds
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id tilda
