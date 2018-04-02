@@ -23,7 +23,7 @@ set $right l
 set $terminal gnome-terminal
 set $filemgr nautilus --no-desktop
 set $browser google-chrome
-set $lock ~/.i3/i3lock-fancy-multimonitor/lock
+set $lock ~/.i3/i3lock-fancy-multimonitor/lock -b=0x6
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -80,7 +80,7 @@ bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec $browser
 bindsym $mod+F3 exec $filemgr
-bindsym $mod+F4 exec telegram-desktop
+bindsym $mod+F4 exec ~/Telegram/Telegram
 bindsym $mod+F5 exec skypeforlinux
 bindsym $mod+Shift+F3 exec gksu $filemgr
 bindsym $mod+t exec --no-startup-id pkill compton
