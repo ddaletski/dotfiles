@@ -4,11 +4,12 @@
 
 
 # DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot i4lock xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager feh fonts-font-awesome lxappearance py3status libnotify-bin
-# https://github.com/karulont/i3lock-blur
+# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager
+# https://github.com/guimeira/i3lock-fancy-multimonitor
 
-exec "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
+exec "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 #exec "xrandr --output eDP-1 --brightness 0.4"
+
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -20,8 +21,9 @@ set $right l
 
 # default apps
 set $terminal gnome-terminal
-set $filemgr nautilus
+set $filemgr nautilus --no-desktop
 set $browser google-chrome
+set $lock ~/.i3/i3lock-fancy-multimonitor/lock
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -53,7 +55,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id "rofi -theme dmenu -show run"
-bindsym $mod+Shift+d exec --no-startup-id "gksudo 'rofi -theme dmenu -show run'"
+
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -78,9 +80,9 @@ bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec $browser
 bindsym $mod+F3 exec $filemgr
-bindsym $mod+F4 exec ~/Telegram/Telegram
+bindsym $mod+F4 exec telegram-desktop
 bindsym $mod+F5 exec skypeforlinux
-bindsym $mod+Shift+F3 exec gksudo $filemgr
+bindsym $mod+Shift+F3 exec gksu $filemgr
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -252,7 +254,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock-fancy, mode "default"
+    bindsym l exec --no-startup-id $lock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
@@ -289,13 +291,11 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id i3lock-fancy
+bindsym $mod+9 exec --no-startup-id $lock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id dropbox start
-exec --no-startup-id conky
 exec --no-startup-id tilda
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -303,7 +303,7 @@ exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec_always --no-startup-id xxkb
 exec --no-startup-id conky
-exec --no-startup-id xautolock -time 10 -locker i3lock-fancy
+exec --no-startup-id xautolock -time 10 -locker $lock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -338,13 +338,11 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
 	status_command py3status
 	position bottom
-
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
