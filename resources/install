@@ -1,0 +1,4 @@
+RESOURCES_DIR=$(pwd)
+
+./matcha/Install
+cd /usr/share/icons && sudo tar -xf $RESOURCES_DIR/ultra-flat-icon-pack.tar.gz

@@ -1,0 +1,4 @@
+CONF_DIR=$(pwd)
+
+find . -maxdepth 1 -type f | xargs -i ln -sf $CONF_DIR/{} ~/  
+ln -sf $CONF_DIR/.i3 ~/.i3
