@@ -17,7 +17,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt extendedglob nomatch
 unsetopt beep
-bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
 
 PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '

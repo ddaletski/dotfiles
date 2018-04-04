@@ -3,7 +3,7 @@
 
 
 # DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot xfce4-power-manager clipit blueman xxkb conky xterm lightdm nautilus network-manager lxappearance feh nitrogen python3-pip nautilus nautilus-dropbox imagemagick scrot fonts-font-awesome
+# sudo apt install tilda rofi volumeicon-alsa compton xfce4-power-manager blueman xxkb conky xfce4-terminal lightdm thunar network-manager lxappearance feh nitrogen python3-pip imagemagick scrot fonts-font-awesome network-manager-gnome
 # sudo pip3 install py3status
 # https://github.com/guimeira/i3lock-fancy-multimonitor
 
@@ -20,8 +20,8 @@ set $left h
 set $right l
 
 # default apps
-set $terminal xterm
-set $filemgr nautilus --no-desktop
+set $terminal xfce4-terminal
+set $filemgr thunar
 set $browser google-chrome
 set $lock ~/.i3/i3lock-fancy-multimonitor/lock -b=0x6
 
@@ -87,9 +87,7 @@ bindsym $mod+Shift+F3 exec gksu $filemgr
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id gnome-screenshot -i
 bindsym $mod+Print --release exec --no-startup-id "gnome-screenshot -a; exec notify-send 'screenshot saved'"
-bindsym $mod+Shift+Print --release exec --no-startup-id "gnome-screenshot -w; exec notify-send 'screenshot saved'"
 bindsym $mod+F10 exec $terminal -e 'htop'
 #bindsym $sup+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -296,14 +294,13 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id tilda
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec_always --no-startup-id xxkb
-exec --no-startup-id conky
+#exec --no-startup-id conky
 exec --no-startup-id xautolock -time 10 -locker $lock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id nautilus start
+exec --no-startup-id dropbox start
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
