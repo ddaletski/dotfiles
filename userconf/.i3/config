@@ -3,7 +3,8 @@
 
 
 # DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot xfce4-power-manager clipit blueman xxkb conky gnome-terminal nautilus network-manager lxappearance feh nitrogen
+# sudo apt install tilda rofi volumeicon-alsa compton gnome-screenshot xfce4-power-manager clipit blueman xxkb conky xterm lightdm nautilus network-manager lxappearance feh nitrogen python3-pip nautilus nautilus-dropbox imagemagick scrot fonts-font-awesome
+# sudo pip3 install py3status
 # https://github.com/guimeira/i3lock-fancy-multimonitor
 
 exec "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
@@ -19,7 +20,7 @@ set $left h
 set $right l
 
 # default apps
-set $terminal gnome-terminal
+set $terminal xterm
 set $filemgr nautilus --no-desktop
 set $browser google-chrome
 set $lock ~/.i3/i3lock-fancy-multimonitor/lock -b=0x6
@@ -79,8 +80,9 @@ bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec $browser
 bindsym $mod+F3 exec $filemgr
-bindsym $mod+F4 exec ~/Telegram/Telegram
-bindsym $mod+F5 exec skypeforlinux
+bindsym $mod+F4 exec --no-startup-id ~/Telegram/Telegram
+bindsym $mod+F5 exec --no-startup-id skypeforlinux
+bindsym $mod+F6 exec --no-startup-id slack
 bindsym $mod+Shift+F3 exec gksu $filemgr
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
@@ -218,20 +220,16 @@ for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
@@ -305,6 +303,7 @@ exec --no-startup-id conky
 exec --no-startup-id xautolock -time 10 -locker $lock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec --no-startup-id nautilus start
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
