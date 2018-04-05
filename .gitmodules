@@ -1,6 +1,6 @@
-[submodule "resources/matcha"]
-	path = resources/matcha
-	url = https://github.com/vinceliuice/matcha.git
 [submodule "userconf/.i3/i3lock-fancy-multimonitor"]
 	path = userconf/.i3/i3lock-fancy-multimonitor
 	url = git@github.com:guimeira/i3lock-fancy-multimonitor.git
+[submodule "3rd/matcha"]
+	path = 3rd/matcha
+	url = https://github.com/vinceliuice/matcha.git

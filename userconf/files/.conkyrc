@@ -47,13 +47,13 @@ ${voffset 10}Root$alignr$color2${fs_used /}/${fs_size /}$color
 ${fs_bar 3,200 /}
 Home$alignr$color2${fs_used /home}/${fs_size /home}$color
 ${fs_bar 3,200 /home}
-Disk D$alignr$color2${fs_used /mnt/D}/${fs_size /mnt/D}$color
-${fs_bar 3,200 /mnt/D}
+Disk D$alignr$color2${fs_used /home/D}/${fs_size /home/D}$color
+${fs_bar 3,200 /home/D}
 #
 R/W: $color2${diskio_read}${goto 110}/${alignr}${diskio_write}$color
 #
-${voffset 10}E: Down $color2${downspeedf enp7s0}KiB${alignr}${upspeedf enp7s0}KiB$color Up
-W: Down $color2${downspeedf wlp4s0}KiB${alignr}${upspeedf wlp4s0}KiB$color Up
+${voffset 10}E: Down $color2${downspeedf eth0}KiB${alignr}${upspeedf eth0}KiB$color Up
+W: Down $color2${downspeedf wlan0}KiB${alignr}${upspeedf wlan0}KiB$color Up
 #${wireless_link_bar 5,200 wlp4s0}
 #
 ${voffset 10}#$alignc${execi 86400 whoami}@${nodename}

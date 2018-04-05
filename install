@@ -1,2 +1,0 @@
-cd userconf && ./install && cd -
-cd resources && ./install && cd -

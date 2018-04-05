@@ -1,6 +1,5 @@
 RESOURCES_DIR=$(pwd)
 
-./matcha/Install
 cd /usr/share/icons
 for theme in $(ls $RESOURCES_DIR/icons/*.tar.gz); do sudo tar -xf $theme; done
 cd $RESOURCES_DIR

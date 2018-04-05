@@ -3,7 +3,7 @@
 
 
 # DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton xfce4-power-manager blueman xxkb conky xfce4-terminal lightdm thunar network-manager lxappearance feh nitrogen python3-pip imagemagick scrot fonts-font-awesome network-manager-gnome
+# sudo apt install tilda rofi volumeicon-alsa compton xfce4-power-manager blueman xxkb conky xfce4-terminal lightdm nautilus network-manager lxappearance feh nitrogen python3-pip imagemagick scrot fonts-font-awesome network-manager-gnome
 # sudo pip3 install py3status
 # https://github.com/guimeira/i3lock-fancy-multimonitor
 
@@ -21,7 +21,7 @@ set $right l
 
 # default apps
 set $terminal xfce4-terminal
-set $filemgr thunar
+set $filemgr nautilus --no-desktop
 set $browser google-chrome
 set $lock ~/.i3/i3lock-fancy-multimonitor/lock -b=0x6
 
@@ -296,7 +296,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec_always --no-startup-id xxkb
-#exec --no-startup-id conky
+exec --no-startup-id conky
 exec --no-startup-id xautolock -time 10 -locker $lock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
