@@ -6,7 +6,7 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' original true
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/denis/.zshrc'
+zstyle :compinstall filename '/$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -48,7 +48,7 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
-export PATH=/home/denis/miniconda3/bin:$PATH:/home/denis/.gem/ruby/2.5.0/bin
+export PATH=/$HOME/miniconda3/bin:$PATH:/$HOME/.gem/ruby/2.5.0/bin
 export EDITOR=/usr/bin/nvim
 
 remove_from_path() {
@@ -57,7 +57,7 @@ remove_from_path() {
 
 act_conda() {
         remove_from_path "miniconda"
-        export PATH="/home/denis/miniconda3/bin:$PATH"
+        export PATH="/$HOME/miniconda3/bin:$PATH"
 }
 
 deact_conda() {
