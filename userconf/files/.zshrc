@@ -63,3 +63,15 @@ act_conda() {
 deact_conda() {
         remove_from_path "miniconda"
 }
+
+bbstatus() {
+	cat /proc/acpi/bbswitch
+}
+
+bbswitchon() {
+	echo "ON" | sudo tee /proc/acpi/bbswitch
+}
+
+bbswitchoff() {
+	echo "OFF" | sudo tee /proc/acpi/bbswitch
+}
