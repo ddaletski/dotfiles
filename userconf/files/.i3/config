@@ -87,6 +87,7 @@ bindsym $mod+Shift+F3 exec gksu $filemgr
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym Print --release exec --no-startup-id "gnome-screenshot -i"
 bindsym $mod+Print --release exec --no-startup-id "gnome-screenshot -a; exec notify-send 'screenshot saved'"
 bindsym $mod+F10 exec $terminal -e 'htop'
 #bindsym $sup+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
