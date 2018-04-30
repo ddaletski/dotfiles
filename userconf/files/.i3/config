@@ -22,7 +22,7 @@ set $right l
 # default apps
 set $terminal i3-sensible-terminal
 set $filemgr nautilus --no-desktop
-set $browser vivaldi
+set $browser firefox
 #set $browser google-chrome
 set $lock ~/.i3/i3lock-fancy-multimonitor/lock -b=0x6
 
