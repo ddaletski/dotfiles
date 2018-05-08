@@ -2,11 +2,6 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 
-# DEPS:
-# sudo apt install tilda rofi volumeicon-alsa compton xfce4-power-manager blueman xxkb conky xfce4-terminal lightdm nautilus network-manager lxappearance feh nitrogen python3-pip imagemagick scrot fonts-font-awesome network-manager-gnome
-# sudo pip3 install py3status
-# https://github.com/guimeira/i3lock-fancy-multimonitor
-
 exec "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 #exec "xrandr --output eDP-1 --brightness 0.4"
 
@@ -65,11 +60,11 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
+#exec --no-startup-id volumeicon
+#bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
+exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
