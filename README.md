@@ -5,13 +5,16 @@
   * i3 config
   * i3status bar with fancy icons
   * conky
+  * lightdm-gtk-greeter
+  * icons, themes, cursors
+* kde desktop:
+  * plasma config
+  * kate config
 * neovim
 * tmux
+* spacemacs
 * zsh
-* lightdm-gtk-greeter
 * libinput-based touchpad gestures
-* icons, themes, cursors
-
 
 ## installation: 
 ```{bash} 
@@ -19,7 +22,7 @@ git clone https://github.com/ddaletski/dotfiles.git
 cd dotfiles
 bash install.sh
 ```  
-for i3 desktop configuration run also 
+for i3 desktop installation (on debian) run also 
 ```{bash}
 bash install-desktop-deps.sh 
 ```

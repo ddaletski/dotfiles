@@ -1,0 +1,31 @@
+[General]
+history=qtc,q,,avide,sleep,steam,steamtricks,xterm,emacs,labelImg,confi,xd,labelimg,dolp,cis,any,firefox,fire,tilda,kons,sudo pkill tilda,kon,dol
+
+[PlasmaRunnerManager]
+LaunchCounts=1 PowerDevil_Suspend,1 services_org.kde.kate.desktop,1 services_nvidia-settings.desktop,1 shell_sudo pkill tilda,1 services_powerdevilprofilesconfig.desktop,1 services_org.qt-project.qtcreator.desktop,1 services_org.kde.ktorrent.desktop,1 services_kde4-org.kde.amarok.desktop,1 services_org.kde.konsole.desktop,4 services_org.kde.dolphin.desktop,1 services_tilda.desktop,2 services_steam.desktop,4 shell_tilda,4 services_firefox.desktop,4 services_cisco-anyconnect.desktop,2 services_DigiaQt-qtcreator-community.desktop,1 services_speedcrunch.desktop
+
+[Plugins]
+DictionaryEnabled=true
+Kill RunnerEnabled=true
+PIM Contacts Search RunnerEnabled=false
+PowerDevilEnabled=true
+Spell CheckerEnabled=false
+appstreamrunnerEnabled=true
+baloosearchEnabled=false
+bookmarksEnabled=true
+calculatorEnabled=true
+desktopsessionsEnabled=true
+katesessionsEnabled=true
+kwinEnabled=false
+locationsEnabled=false
+marbleEnabled=false
+org.kde.activitiesEnabled=true
+org.kde.datetimeEnabled=true
+placesEnabled=true
+plasma-desktopEnabled=true
+recentdocumentsEnabled=false
+servicesEnabled=true
+shellEnabled=true
+unitconverterEnabled=false
+webshortcutsEnabled=true
+windowsEnabled=true

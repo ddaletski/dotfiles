@@ -36,6 +36,10 @@ copy_recursively() {
 }
 
 
-echo `colored yellow copying`
-sudo bash -c "$(declare -f copy_recursively); copy_recursively $(readlink -f files) / files"
-echo `colored green done`
+for files_dir in `find files -maxdepth 1 -mindepth 1`
+do
+    echo `colored blue installing $files_dir`
+    echo `colored yellow copying`
+    sudo bash -c "$(declare -f copy_recursively); copy_recursively $(readlink -f $files_dir) / $files_dir"
+    echo `colored green done`
+done
