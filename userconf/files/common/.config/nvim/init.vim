@@ -25,6 +25,8 @@ Plug 'mhartington/oceanic-next'
 Plug 'Shougo/denite.nvim'
 Plug 'sandeepcr529/Buffet.vim'
 
+Plug 'lervag/vimtex'
+
 "Initialize plugin system
 call plug#end()
 

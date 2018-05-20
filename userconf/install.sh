@@ -57,11 +57,19 @@ find_loops() {
     done
 }
 
+for files_dir in `find files -maxdepth 1 -mindepth 1 -type d`
+do
+    echo `colored blue installing $files_dir configs`
 
-echo `colored yellow cleaning symlink loops`
-find_loops files 
-echo `colored green done`
+    echo `colored yellow cleaning symlink loops`
+    find_loops $files_dir
 
-echo `colored yellow linking`
-link_recursively `readlink -f files` $HOME files
-echo `colored green done`
+    echo `colored yellow linking`
+    link_recursively `readlink -f $files_dir` $HOME $files_dir
+
+    echo `colored green done`
+done
+
+echo `colored blue installing some apps`
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
