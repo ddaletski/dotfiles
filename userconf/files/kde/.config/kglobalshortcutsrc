@@ -6,7 +6,7 @@ switch-to-activity-f6de952a-94a9-47d9-940b-bf1ca9fb7bea=none,none,
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
 Switch keyboard layout to Russian=none,none,Switch keyboard layout to Russian
-Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
+Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=KDE Daemon
 
 [amarok]
@@ -17,7 +17,7 @@ loveTrack=,Meta+L,Last.fm: Love Current Track
 mute=Meta+M,Meta+M,Mute Volume
 next=none,none,Next Track
 play_pause=none,none,Play/Pause
-playlist_add=Meta+A,Meta+A,Add Media...
+playlist_add=,Meta+A,Add Media...
 prev=none,none,Previous Track
 rate1=,Meta+1,Rate Current Track: 1
 rate2=,Meta+2,Rate Current Track: 2
@@ -263,6 +263,7 @@ activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 3=Alt+F1,none,Activate Application Menu Widget
+activate widget 39=Meta+A,none,Activate Application Menu Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
