@@ -26,6 +26,9 @@ Plug 'Shougo/denite.nvim'
 Plug 'sandeepcr529/Buffet.vim'
 
 Plug 'lervag/vimtex'
+Plug 'vim-syntastic/syntastic'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 "Initialize plugin system
 call plug#end()
@@ -73,3 +76,22 @@ set softtabstop=4
 " multi cursor
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" racer
+set hidden
+let g:racer_cmd = "/home/denis/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gv <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
