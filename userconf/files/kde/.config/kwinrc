@@ -5,6 +5,9 @@ OpenGLIsUnsafe=false
 Number=4
 Rows=2
 
+[Effect-Zoom]
+InitialZoom=1
+
 [MouseBindings]
 CommandActiveTitlebar1=Raise
 CommandActiveTitlebar2=Start window tab drag
@@ -46,6 +49,11 @@ count=0
 active=-1
 count=0
 
+[TabBox]
+DesktopLayout=org.kde.breeze.desktop
+DesktopListLayout=org.kde.breeze.desktop
+LayoutName=org.kde.breeze.desktop
+
 [Windows]
 ActiveMouseScreen=true
 AutoRaise=false
@@ -73,3 +81,11 @@ ShadeHoverInterval=250
 SnapOnlyWhenOverlapping=false
 TitlebarDoubleClickCommand=Maximize
 WindowSnapZone=10
+
+[org.kde.kdecoration2]
+BorderSize=Normal
+ButtonsOnLeft=MS
+ButtonsOnRight=HIAX
+CloseOnDoubleClickOnMenu=false
+library=org.kde.breeze
+theme[$d]

@@ -1,5 +1,6 @@
 [ActivityManager]
-_k_friendly_name=System Settings
+_k_friendly_name=ActivityManager
+switch-to-activity-=none,none,
 switch-to-activity-ddf64293-17e6-4227-8dc9-e94b22cc61f4=none,none,
 switch-to-activity-f6de952a-94a9-47d9-940b-bf1ca9fb7bea=none,none,
 
@@ -10,7 +11,7 @@ Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Lay
 _k_friendly_name=KDE Daemon
 
 [amarok]
-_k_friendly_name=Amarok
+_k_friendly_name=amarok
 decreaseVolume=,Meta+-,Decrease Volume
 increaseVolume=Meta++,Meta++,Increase Volume
 loveTrack=,Meta+L,Last.fm: Love Current Track
@@ -35,17 +36,25 @@ toggleMainWindow=none,none,Toggle Main Window
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
-_k_friendly_name=Accessibility
+_k_friendly_name=kaccess
 
 [kcm_touchpad]
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings
 
 [kded5]
+Decrease Keyboard Brightness=,Keyboard Brightness Down,Decrease Keyboard Brightness
+Decrease Screen Brightness=,Monitor Brightness Down,Decrease Screen Brightness
+Hibernate=Hibernate,Hibernate,Hibernate
+Increase Keyboard Brightness=,Keyboard Brightness Up,Increase Keyboard Brightness
+Increase Screen Brightness=,Monitor Brightness Up,Increase Screen Brightness
+PowerOff=Power Off,Power Off,Power Off
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
-_k_friendly_name=KDE Daemon
+Sleep=Sleep,Sleep,Suspend
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
+_k_friendly_name=Power Management
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
@@ -88,7 +97,7 @@ _k_friendly_name=ksmserver
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
 Decrease Opacity=none,none,Decrease Opacity of Active Window by 5 %
 Expose=Ctrl+F9,Ctrl+F9,Toggle Present Windows (Current desktop)
-ExposeAll=Ctrl+F10\tLaunch (C),Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
+ExposeAll=Meta+Tab\tLaunch (C),Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
 ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
 Increase Opacity=none,none,Increase Opacity of Active Window by 5 %
 Invert Screen Colors=none,none,Invert Screen Colors
@@ -248,7 +257,7 @@ Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase 
 PowerOff=none,Power Off,Power Off
 Sleep=none,Sleep,Suspend
 Toggle Keyboard Backlight=none,Keyboard Light On/Off,Toggle Keyboard Backlight
-_k_friendly_name=Power Management
+_k_friendly_name=org_kde_powerdevil
 
 [plasmashell]
 _k_friendly_name=Plasma
@@ -263,14 +272,14 @@ activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 3=Alt+F1,none,Activate Application Menu Widget
-activate widget 39=Meta+A,none,Activate Application Menu Widget
+activate widget 45=Meta+A,none,Activate Application Menu Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents...
 manage activities=Meta+Q,Meta+Q,Activities...
-next activity=Meta+Tab,none,Walk through activities
+next activity=,none,Walk through activities
 previous activity=Meta+Shift+Tab,none,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
@@ -287,4 +296,4 @@ Previous Profile=Meta+Ctrl+P,Meta+Ctrl+P,Previous Profile
 Toggle screen map selection=Meta+Ctrl+M,Meta+Ctrl+M,Toggle between all screens
 Toggle stylus mode=Meta+Ctrl+S,Meta+Ctrl+S,Toggle the Stylus Tool Relative/Absolute
 Toggle touch tool=Meta+Ctrl+T,Meta+Ctrl+T,Enable/Disable the Touch Tool
-_k_friendly_name=Wacom Tablet
+_k_friendly_name=wacomtablet
