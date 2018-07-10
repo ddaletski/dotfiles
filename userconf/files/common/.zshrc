@@ -83,3 +83,7 @@ bbswitchoff() {
 	echo "OFF" | sudo tee /proc/acpi/bbswitch
 }
 
+check_mem() {
+    pidof $1 | xargs -i cat /proc/{}/status | grep "RssAnon\|Threads"
+}
+

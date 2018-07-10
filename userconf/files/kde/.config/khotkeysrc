@@ -1026,14 +1026,14 @@ Uuid={97dc0cb0-cc5b-460c-83aa-2053436fe028}
 [Data_5_2]
 Comment=Comment
 Enabled=true
-Name=firefox
+Name=chrome
 Type=SIMPLE_ACTION_DATA
 
 [Data_5_2Actions]
 ActionsCount=1
 
 [Data_5_2Actions0]
-CommandURL=firefox
+CommandURL=google-chrome-stable
 Type=COMMAND_URL
 
 [Data_5_2Conditions]

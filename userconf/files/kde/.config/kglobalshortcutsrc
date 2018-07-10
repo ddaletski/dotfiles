@@ -67,7 +67,7 @@ _k_friendly_name=KDE Daemon
 {97dc0cb0-cc5b-460c-83aa-2053436fe028}=Ctrl+Alt+F,none,dolphin
 {aaa04999-353b-4814-9aee-a272d3692a47}=Shift+Print,none,Take Full Screen Screenshot
 {c13b21c9-7f40-4633-bad2-3c6c9828516a}=Ctrl+Alt+S,none,settings
-{cb8ededd-d216-4afd-978d-90e117401a0f}=Ctrl+Alt+B,none,firefox
+{cb8ededd-d216-4afd-978d-90e117401a0f}=Ctrl+Alt+B,none,chrome
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 {e748c1b7-f6c8-4f01-9eaf-a29b8f886736}=Meta+Print,none,Take Active Window Screenshot
 
