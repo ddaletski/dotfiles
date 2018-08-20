@@ -1033,7 +1033,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_5_2Actions0]
-CommandURL=google-chrome-stable
+CommandURL=google-chrome
 Type=COMMAND_URL
 
 [Data_5_2Conditions]
