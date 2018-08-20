@@ -1158,6 +1158,8 @@ dir_pixmap[$d]
 
 [General]
 BrowserApplication[$d]
+ColorScheme[$d]
+Name[$d]
 desktopFont[$d]
 fixed[$d]
 font[$d]
@@ -1181,8 +1183,10 @@ Theme[$d]
 
 [KDE]
 ChangeCursor[$d]
+ColorScheme[$d]
 LookAndFeelPackage[$d]
 contrast[$d]
+widgetStyle[$d]
 
 [KDE URL Restrictions]
 rule_1[$d]
@@ -1200,6 +1204,7 @@ Version=2
 Trash[$d]
 
 [PreviewSettings]
+MaximumSize[$d]
 camera[$d]
 file[$d]
 fonts[$d]

@@ -36,13 +36,13 @@ toggleMainWindow=none,none,Toggle Main Window
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
-_k_friendly_name=kaccess
+_k_friendly_name=Accessibility
 
 [kcm_touchpad]
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=System Settings
+_k_friendly_name=KDE Daemon
 
 [kded5]
 Decrease Keyboard Brightness=,Keyboard Brightness Down,Decrease Keyboard Brightness
@@ -54,11 +54,11 @@ PowerOff=Power Off,Power Off,Power Off
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
 Sleep=Sleep,Sleep,Suspend
 Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
-_k_friendly_name=Power Management
+_k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings
 {02ea19d0-0daa-4cfb-8246-d698d961b833}=Meta+F2,none,skype
 {19cb51be-bcf4-4a42-ab32-92b79d95e9c2}=Ctrl+Alt+T,none,konsole
 {1e0ab58a-8ef3-4e29-a7dc-aac6b6cd3f27}=Print,none,Start Screenshot Tool
@@ -97,7 +97,7 @@ _k_friendly_name=ksmserver
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
 Decrease Opacity=none,none,Decrease Opacity of Active Window by 5 %
 Expose=Ctrl+F9,Ctrl+F9,Toggle Present Windows (Current desktop)
-ExposeAll=Meta+Tab\tLaunch (C),Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
+ExposeAll=Meta+Tab,Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
 ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
 Increase Opacity=none,none,Increase Opacity of Active Window by 5 %
 Invert Screen Colors=none,none,Invert Screen Colors
@@ -259,7 +259,7 @@ Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase 
 PowerOff=none,Power Off,Power Off
 Sleep=none,Sleep,Suspend
 Toggle Keyboard Backlight=none,Keyboard Light On/Off,Toggle Keyboard Backlight
-_k_friendly_name=org_kde_powerdevil
+_k_friendly_name=Power Management
 
 [plasmashell]
 _k_friendly_name=Plasma
@@ -273,7 +273,8 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
-activate widget 3=Alt+F1,none,Activate Application Menu Widget
+activate widget 21=,none,Activate Application Menu Widget
+activate widget 3=Alt+F1,none,Activate Application Launcher Widget
 activate widget 45=Meta+A,none,Activate Application Menu Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions

@@ -55,7 +55,6 @@ cdl() {
 }
 
 
-export PATH=/$HOME/miniconda3/bin:$PATH:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
 export EDITOR=/usr/bin/nvim
 
 remove_from_path() {
