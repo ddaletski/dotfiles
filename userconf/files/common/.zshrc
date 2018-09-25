@@ -55,20 +55,10 @@ cdl() {
 }
 
 
-export PATH=/$HOME/miniconda3/bin:$PATH:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
 export EDITOR=/usr/bin/nvim
 
 remove_from_path() {
         export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")
-}
-
-act_conda() {
-        remove_from_path "miniconda"
-        export PATH="/$HOME/miniconda3/bin:$PATH"
-}
-
-deact_conda() {
-        remove_from_path "miniconda"
 }
 
 bbstatus() {

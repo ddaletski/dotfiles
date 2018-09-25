@@ -36,7 +36,7 @@ toggleMainWindow=none,none,Toggle Main Window
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
-_k_friendly_name=kaccess
+_k_friendly_name=Accessibility
 
 [kcm_touchpad]
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
@@ -45,16 +45,8 @@ Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
 _k_friendly_name=System Settings
 
 [kded5]
-Decrease Keyboard Brightness=,Keyboard Brightness Down,Decrease Keyboard Brightness
-Decrease Screen Brightness=,Monitor Brightness Down,Decrease Screen Brightness
-Hibernate=Hibernate,Hibernate,Hibernate
-Increase Keyboard Brightness=,Keyboard Brightness Up,Increase Keyboard Brightness
-Increase Screen Brightness=,Monitor Brightness Up,Increase Screen Brightness
-PowerOff=Power Off,Power Off,Power Off
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
-Sleep=Sleep,Sleep,Suspend
-Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
-_k_friendly_name=Power Management
+_k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
@@ -104,10 +96,10 @@ Invert Screen Colors=none,none,Invert Screen Colors
 Kill Window=Meta+Shift+Q,Ctrl+Alt+Esc,Kill Window
 MoveMouseToCenter=Meta+F6,Meta+F6,Move Mouse to Center
 MoveMouseToFocus=Meta+F5,Meta+F5,Move Mouse to Focus
-MoveZoomDown=,Meta+Down,Move Zoomed Area Downwards
-MoveZoomLeft=Meta+Left,Meta+Left,Move Zoomed Area to Left
-MoveZoomRight=Meta+Right,Meta+Right,Move Zoomed Area to Right
-MoveZoomUp=,Meta+Up,Move Zoomed Area Upwards
+MoveZoomDown=,Meta+Ctrl+Down,Move Zoomed Area Downwards
+MoveZoomLeft=Meta+Left,Meta+Ctrl+Left,Move Zoomed Area to Left
+MoveZoomRight=Meta+Right,Meta+Ctrl+Right,Move Zoomed Area to Right
+MoveZoomUp=,Meta+Ctrl+Up,Move Zoomed Area Upwards
 Remove Window From Group=none,none,Remove Window From Group
 Setup Window Shortcut=none,none,Setup Window Shortcut
 Show Desktop=Meta+D,none,Show Desktop
@@ -175,10 +167,10 @@ Window Fullscreen=Meta+F,none,Make Window Fullscreen
 Window Grow Horizontal=none,none,Pack Grow Window Horizontally
 Window Grow Vertical=none,none,Pack Grow Window Vertically
 Window Lower=,none,Lower Window
-Window Maximize=Meta+S,none,Maximize Window
+Window Maximize=Meta+S,Meta+PgUp,Maximize Window
 Window Maximize Horizontal=none,none,Maximize Window Horizontally
 Window Maximize Vertical=,none,Maximize Window Vertically
-Window Minimize=Meta+Down,none,Minimize Window
+Window Minimize=Meta+Down,Meta+PgDown,Minimize Window
 Window Move=none,none,Move Window
 Window No Border=none,none,Hide Window Border
 Window On All Desktops=none,none,Keep Window on All Desktops
@@ -191,12 +183,12 @@ Window Pack Down=none,none,Pack Window Down
 Window Pack Left=none,none,Pack Window to the Left
 Window Pack Right=none,none,Pack Window to the Right
 Window Pack Up=none,none,Pack Window Up
-Window Quick Tile Bottom=Meta+Ctrl+J,none,Quick Tile Window to the Bottom
+Window Quick Tile Bottom=Meta+Ctrl+J,Meta+Down,Quick Tile Window to the Bottom
 Window Quick Tile Bottom Left=none,none,Quick Tile Window to the Bottom Left
 Window Quick Tile Bottom Right=none,none,Quick Tile Window to the Bottom Right
-Window Quick Tile Left=Meta+Ctrl+H,none,Quick Tile Window to the Left
-Window Quick Tile Right=Meta+Ctrl+L,none,Quick Tile Window to the Right
-Window Quick Tile Top=Meta+Ctrl+K,none,Quick Tile Window to the Top
+Window Quick Tile Left=Meta+Ctrl+H,Meta+Left,Quick Tile Window to the Left
+Window Quick Tile Right=Meta+Ctrl+L,Meta+Right,Quick Tile Window to the Right
+Window Quick Tile Top=Meta+Ctrl+K,Meta+Up,Quick Tile Window to the Top
 Window Quick Tile Top Left=none,none,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=none,none,Quick Tile Window to the Top Right
 Window Raise=none,none,Raise Window
@@ -249,15 +241,15 @@ previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
 [org_kde_powerdevil]
-Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
-Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Decrease Screen Brightness
-Hibernate=none,Hibernate,Hibernate
-Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Increase Keyboard Brightness
-Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase Screen Brightness
-PowerOff=none,Power Off,Power Off
-Sleep=none,Sleep,Suspend
-Toggle Keyboard Backlight=none,Keyboard Light On/Off,Toggle Keyboard Backlight
-_k_friendly_name=org_kde_powerdevil
+Decrease Keyboard Brightness=none,Keyboard Brightness Down,Decrease Keyboard Brightness
+Decrease Screen Brightness=none,Monitor Brightness Down,Decrease Screen Brightness
+Hibernate=Hibernate,Hibernate,Hibernate
+Increase Keyboard Brightness=none,Keyboard Brightness Up,Increase Keyboard Brightness
+Increase Screen Brightness=none,Monitor Brightness Up,Increase Screen Brightness
+PowerOff=Power Off,Power Off,Power Off
+Sleep=Sleep,Sleep,Suspend
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
+_k_friendly_name=Power Management
 
 [plasmashell]
 _k_friendly_name=Plasma
@@ -273,6 +265,7 @@ activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 3=Alt+F1,none,Activate Application Menu Widget
 activate widget 45=Meta+A,none,Activate Application Menu Widget
+activate widget 78=,none,Activate Application Launcher Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
