@@ -1033,7 +1033,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_5_2Actions0]
-CommandURL=google-chrome-stable
+CommandURL=google-chrome
 Type=COMMAND_URL
 
 [Data_5_2Conditions]
@@ -1161,6 +1161,8 @@ BrowserApplication[$d]
 XftAntialias[$d]
 XftHintStyle[$d]
 XftSubPixel[$d]
+ColorScheme[$d]
+Name[$d]
 desktopFont[$d]
 fixed[$d]
 font[$d]
@@ -1184,9 +1186,11 @@ Theme[$d]
 
 [KDE]
 ChangeCursor[$d]
+ColorScheme[$d]
 LookAndFeelPackage[$d]
 SingleClick[$d]
 contrast[$d]
+widgetStyle[$d]
 
 [KDE URL Restrictions]
 rule_1[$d]
@@ -1204,6 +1208,7 @@ Version=2
 Trash[$d]
 
 [PreviewSettings]
+MaximumSize[$d]
 camera[$d]
 file[$d]
 fonts[$d]

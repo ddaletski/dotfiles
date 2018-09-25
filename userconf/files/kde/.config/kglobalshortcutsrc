@@ -42,15 +42,17 @@ _k_friendly_name=Accessibility
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=System Settings
+_k_friendly_name=KDE Daemon
 
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
+Sleep=Sleep,Sleep,Suspend
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
 _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings
 {02ea19d0-0daa-4cfb-8246-d698d961b833}=Meta+F2,none,skype
 {19cb51be-bcf4-4a42-ab32-92b79d95e9c2}=Ctrl+Alt+T,none,konsole
 {1e0ab58a-8ef3-4e29-a7dc-aac6b6cd3f27}=Print,none,Start Screenshot Tool
@@ -89,7 +91,7 @@ _k_friendly_name=ksmserver
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
 Decrease Opacity=none,none,Decrease Opacity of Active Window by 5 %
 Expose=Ctrl+F9,Ctrl+F9,Toggle Present Windows (Current desktop)
-ExposeAll=Meta+Tab\tLaunch (C),Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
+ExposeAll=Meta+Tab,Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
 ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
 Increase Opacity=none,none,Increase Opacity of Active Window by 5 %
 Invert Screen Colors=none,none,Invert Screen Colors
@@ -235,20 +237,22 @@ view_zoom_out=Meta+-,Meta+-,Zoom Out
 
 [mediacontrol]
 _k_friendly_name=Media Controller
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
 nextmedia=Media Next,Media Next,Media playback next
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
 [org_kde_powerdevil]
-Decrease Keyboard Brightness=none,Keyboard Brightness Down,Decrease Keyboard Brightness
-Decrease Screen Brightness=none,Monitor Brightness Down,Decrease Screen Brightness
-Hibernate=Hibernate,Hibernate,Hibernate
-Increase Keyboard Brightness=none,Keyboard Brightness Up,Increase Keyboard Brightness
-Increase Screen Brightness=none,Monitor Brightness Up,Increase Screen Brightness
-PowerOff=Power Off,Power Off,Power Off
-Sleep=Sleep,Sleep,Suspend
-Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
+Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
+Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Decrease Screen Brightness
+Hibernate=none,Hibernate,Hibernate
+Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Increase Keyboard Brightness
+Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase Screen Brightness
+PowerOff=none,Power Off,Power Off
+Sleep=none,Sleep,Suspend
+Toggle Keyboard Backlight=none,Keyboard Light On/Off,Toggle Keyboard Backlight
 _k_friendly_name=Power Management
 
 [plasmashell]
@@ -263,7 +267,8 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
-activate widget 3=Alt+F1,none,Activate Application Menu Widget
+activate widget 21=,none,Activate Application Menu Widget
+activate widget 3=Alt+F1,none,Activate Application Launcher Widget
 activate widget 45=Meta+A,none,Activate Application Menu Widget
 activate widget 78=,none,Activate Application Launcher Widget
 clear-history=none,none,Clear Clipboard History
