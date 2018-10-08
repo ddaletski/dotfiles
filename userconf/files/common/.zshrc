@@ -2,7 +2,6 @@
 #
 
 . /etc/profile
-fpath+=~/.zfunc
 
 zstyle ':completion:*' completer _expand _complete _ignored #_correct
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*'
