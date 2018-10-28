@@ -1,7 +1,7 @@
 # The following lines were added by compinstall
 #
-
-fpath+=~/.zfunc
+#
+. /etc/profile
 
 zstyle ':completion:*' completer _expand _complete _ignored #_correct
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*'
@@ -50,10 +50,10 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+
 cdl() {
     cd `readlink $1`
 }
-
 
 export EDITOR=/usr/bin/nvim
 
@@ -61,14 +61,6 @@ remove_from_path() {
         export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")
 }
 
-act_conda() {
-        remove_from_path "miniconda"
-        export PATH="/$HOME/miniconda3/bin:$PATH"
-}
-
-deact_conda() {
-        remove_from_path "miniconda"
-}
 
 bbstatus() {
 	cat /proc/acpi/bbswitch
@@ -84,5 +76,13 @@ bbswitchoff() {
 
 check_mem() {
     pidof $1 | xargs -i cat /proc/{}/status | grep "RssAnon\|Threads"
+}
+
+display_local() {
+  export DISPLAY=:0
+}
+
+display_remote() {
+  export DISPLAY=localhost:10.0
 }
 
