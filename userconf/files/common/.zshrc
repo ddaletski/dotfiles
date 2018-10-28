@@ -1,6 +1,5 @@
 # The following lines were added by compinstall
 #
-#
 . /etc/profile
 
 zstyle ':completion:*' completer _expand _complete _ignored #_correct
@@ -60,7 +59,6 @@ export EDITOR=/usr/bin/nvim
 remove_from_path() {
         export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")
 }
-
 
 bbstatus() {
 	cat /proc/acpi/bbswitch

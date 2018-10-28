@@ -26,7 +26,6 @@ Plug 'Shougo/denite.nvim'
 Plug 'sandeepcr529/Buffet.vim'
 
 Plug 'lervag/vimtex'
-Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
@@ -84,7 +83,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " racer
