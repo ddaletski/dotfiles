@@ -1052,14 +1052,14 @@ Uuid={cb8ededd-d216-4afd-978d-90e117401a0f}
 [Data_5_3]
 Comment=Comment
 Enabled=true
-Name=konsole
+Name=terminal
 Type=SIMPLE_ACTION_DATA
 
 [Data_5_3Actions]
 ActionsCount=1
 
 [Data_5_3Actions0]
-CommandURL=konsole
+CommandURL=gnome-terminal
 Type=COMMAND_URL
 
 [Data_5_3Conditions]
@@ -1158,11 +1158,11 @@ dir_pixmap[$d]
 
 [General]
 BrowserApplication[$d]
+ColorScheme[$d]
+Name[$d]
 XftAntialias[$d]
 XftHintStyle[$d]
 XftSubPixel[$d]
-ColorScheme[$d]
-Name[$d]
 desktopFont[$d]
 fixed[$d]
 font[$d]
