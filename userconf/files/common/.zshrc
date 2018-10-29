@@ -1,8 +1,6 @@
 # The following lines were added by compinstall
 #
-
 . /etc/profile
-fpath+=~/.zfunc
 
 zstyle ':completion:*' completer _expand _complete _ignored #_correct
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*'
@@ -51,10 +49,10 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+
 cdl() {
     cd `readlink $1`
 }
-
 
 export EDITOR=/usr/bin/nvim
 
@@ -76,5 +74,13 @@ bbswitchoff() {
 
 check_mem() {
     pidof $1 | xargs -i cat /proc/{}/status | grep "RssAnon\|Threads"
+}
+
+display_local() {
+  export DISPLAY=:0
+}
+
+display_remote() {
+  export DISPLAY=localhost:10.0
 }
 
