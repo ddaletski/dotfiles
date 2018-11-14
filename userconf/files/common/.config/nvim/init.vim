@@ -1,3 +1,4 @@
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
@@ -9,9 +10,11 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 Plug 'terryma/vim-multiple-cursors'
 
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/ncm-clang'
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
 
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
@@ -26,11 +29,12 @@ Plug 'Shougo/denite.nvim'
 Plug 'sandeepcr529/Buffet.vim'
 
 Plug 'lervag/vimtex'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 "Initialize plugin system
 call plug#end()
+
+set completeopt=noinsert,menuone,noselect
+autocmd BufEnter * call ncm2#enable_for_buffer()
 
 set foldmethod=indent
 set foldlevel=99
