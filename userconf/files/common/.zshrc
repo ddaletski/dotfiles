@@ -1,6 +1,7 @@
 # The following lines were added by compinstall
 #
 . /etc/profile
+. $HOME/.profile
 
 zstyle ':completion:*' completer _expand _complete _ignored #_correct
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*'

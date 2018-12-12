@@ -42,12 +42,10 @@ _k_friendly_name=Accessibility
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=System Settings
+_k_friendly_name=KDE Daemon
 
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
-Sleep=Sleep,Sleep,Suspend
-Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
 _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
@@ -251,8 +249,8 @@ Hibernate=Hibernate,Hibernate,Hibernate
 Increase Keyboard Brightness=none,Keyboard Brightness Up,Increase Keyboard Brightness
 Increase Screen Brightness=none,Monitor Brightness Up,Increase Screen Brightness
 PowerOff=Power Off,Power Off,Power Off
-Sleep=none,Sleep,Suspend
-Toggle Keyboard Backlight=none,Keyboard Light On/Off,Toggle Keyboard Backlight
+Sleep=Sleep,Sleep,Suspend
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
 _k_friendly_name=Power Management
 
 [plasmashell]
@@ -271,6 +269,7 @@ activate widget 21=,none,Activate Application Menu Widget
 activate widget 3=Alt+F1,none,Activate Application Menu Widget
 activate widget 45=Meta+A,none,Activate Application Menu Widget
 activate widget 78=,none,Activate Application Launcher Widget
+activate widget 98=,none,Activate Application Launcher Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
