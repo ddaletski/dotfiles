@@ -55,7 +55,7 @@ cdl() {
     cd `readlink $1`
 }
 
-export EDITOR=/usr/bin/nvim
+export EDITOR=nvim
 
 remove_from_path() {
         export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")

@@ -1,3 +1,8 @@
+case "$OSTYPE" in
+  darwin*)  READLINK=greadlink ;; 
+  linux*)   READLINK=readlink ;;
+esac
+
 colored() {
     case $1 in 
         'red')
@@ -21,7 +26,7 @@ link_recursively() {
 # $2 dest dir
 # $3 current file or dir
 
-    path=$(readlink -f $3)
+    path=$($READLINK -f $3)
 
     if [ -d $path ] ; then
         entries=`find $path -maxdepth 1 -mindepth 1`
@@ -45,8 +50,8 @@ find_loops() {
 
     for entry in $entries
     do
-        current=`readlink -f $entry`
-        parent=`readlink -f $(dirname $entry)`
+        current=`$READLINK -f $entry`
+        parent=`$READLINK -f $(dirname $entry)`
 
         if [ $current = $parent ] ; then
             echo `colored blue found loop $entry and $(dirname $entry)`
@@ -65,7 +70,7 @@ do
     find_loops $files_dir
 
     echo `colored yellow linking`
-    link_recursively `readlink -f $files_dir` $HOME $files_dir
+    link_recursively `$READLINK -f $files_dir` $HOME $files_dir
 
     echo `colored green done`
 done
