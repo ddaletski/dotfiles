@@ -27,16 +27,25 @@ PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
 cd ~
 
 
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+case "$OSTYPE" in
+  darwin*)  
+	    alias ls='ls -G'
+	    alias grep='grep --color=auto'
+	    alias fgrep='fgrep --color=auto'
+	    alias egrep='egrep --color=auto' ;;
+  linux*)   
+	if [ -x /usr/bin/dircolors ]; then
+	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	    alias ls='ls --color=auto'
+	    #alias dir='dir --color=auto'
+	    #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+	    alias grep='grep --color=auto'
+	    alias fgrep='fgrep --color=auto'
+	    alias egrep='egrep --color=auto'
+	fi ;;
+esac
+
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -89,3 +98,19 @@ display_remote() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/denisdaletski/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/denisdaletski/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/denisdaletski/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/denisdaletski/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
