@@ -16,6 +16,9 @@ Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
 
@@ -75,6 +78,8 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 
+" substitution
+:set inccommand=split
 
 " multi cursor
 let g:multi_cursor_exit_from_visual_mode=0
