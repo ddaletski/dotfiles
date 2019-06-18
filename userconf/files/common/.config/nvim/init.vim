@@ -1,5 +1,10 @@
-
 call plug#begin('~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'Shougo/denite.nvim'
+Plug 'sandeepcr529/Buffet.vim'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -9,9 +14,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 Plug 'terryma/vim-multiple-cursors'
+Plug 'roxma/nvim-yarp'
 
 Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
@@ -27,9 +32,6 @@ Plug 'vim-scripts/indentpython.vim'
 
 Plug 'flazz/vim-colorschemes'
 Plug 'mhartington/oceanic-next'
-
-Plug 'Shougo/denite.nvim'
-Plug 'sandeepcr529/Buffet.vim'
 
 Plug 'lervag/vimtex'
 
