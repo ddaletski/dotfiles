@@ -19,8 +19,7 @@ Plug 'alvan/vim-closetag'
 
 Plug 'vim-scripts/indentpython.vim'
 
-Plug 'flazz/vim-colorschemes'
-Plug 'mhartington/oceanic-next'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 Plug 'lervag/vimtex'
 
@@ -35,14 +34,14 @@ set foldmethod=indent
 set foldlevel=99
 set colorcolumn=100
 
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
+
 
 " Theme
 let python_highlight_all=1
 
 syntax enable
-set  t_Co=256
-set bg=dark
-colorscheme OceanicNext
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
