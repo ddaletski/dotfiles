@@ -173,3 +173,6 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" COC Snippets
+
+let g:coc_snippet_next = '<tab>'
