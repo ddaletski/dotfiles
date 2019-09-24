@@ -1,23 +1,26 @@
 {
     "languageserver": {
-        "clangd": {
-            "command": "clangd",
-            "args": [
-                "--background-index"
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "cuda",
+                "objc",
+                "objcpp"
             ],
             "rootPatterns": [
-                "compile_flags.txt",
+                ".ccls",
                 "compile_commands.json",
                 ".vim/",
                 ".git/",
                 ".hg/"
             ],
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ]
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                }
+            }
         }
     },
     "suggest.noselect": false

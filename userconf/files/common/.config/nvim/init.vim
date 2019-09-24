@@ -24,6 +24,8 @@ Plug 'mhartington/oceanic-next'
 
 Plug 'lervag/vimtex'
 
+Plug 'shougo/echodoc'
+
 "Initialize plugin system
 call plug#end()
 
@@ -66,6 +68,8 @@ let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" COC
+
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -105,7 +109,9 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
+" Highlight symbol under cursor on CursorHold and show signature on CursorHoldI
+set updatetime=300
+autocmd CursorHoldI * silent call CocActionAsync('showSignatureHelp')
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
@@ -169,8 +175,12 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
 " COC Snippets
-
 let g:coc_snippet_next = '<tab>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" echodoc
+
+set cmdheight=1
+set noshowmode
+let g:echodoc#enable_at_startup = 1
