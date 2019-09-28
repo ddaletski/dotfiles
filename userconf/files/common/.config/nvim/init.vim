@@ -6,24 +6,20 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'sandeepcr529/Buffet.vim'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'roxma/nvim-yarp'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
-
-Plug 'vim-scripts/indentpython.vim'
 
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 Plug 'lervag/vimtex'
 
 Plug 'shougo/echodoc'
+
+Plug 'ctrlpvim/ctrlp.vim'
 
 "Initialize plugin system
 call plug#end()
