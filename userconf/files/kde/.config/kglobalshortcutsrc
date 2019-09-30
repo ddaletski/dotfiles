@@ -1,6 +1,7 @@
 [ActivityManager]
-_k_friendly_name=ActivityManager
+_k_friendly_name=Activity Manager
 switch-to-activity-=none,none,
+switch-to-activity-7fedac19-58fc-428e-bce7-1745e0d5b865=none,none,Switch to activity "Default"
 switch-to-activity-ddf64293-17e6-4227-8dc9-e94b22cc61f4=none,none,
 switch-to-activity-f6de952a-94a9-47d9-940b-bf1ca9fb7bea=none,none,
 
@@ -34,6 +35,12 @@ stop=none,none,Stop
 stop_after_current=Meta+Shift+V,Meta+Shift+V,Stop after current Track
 toggleMainWindow=none,none,Toggle Main Window
 
+[google-chrome.desktop]
+_k_friendly_name=Launch Google Chrome
+_launch=Ctrl+Alt+B,none,Launch Google Chrome
+new-private-window=,none,New Incognito Window
+new-window=none,none,New Window
+
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
@@ -51,16 +58,10 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{02ea19d0-0daa-4cfb-8246-d698d961b833}=Meta+F2,none,skype
 {042b8d95-afb3-4b67-8aa0-f291252aa6a4}=,none,Launch Konsole
-{19cb51be-bcf4-4a42-ab32-92b79d95e9c2}=Ctrl+Alt+T,none,terminal
 {1e0ab58a-8ef3-4e29-a7dc-aac6b6cd3f27}=Print,none,Start Screenshot Tool
 {63391d70-7ec8-4752-a5a3-10b681fac523}=Meta+Shift+Print,none,Take Rectangular Region Screenshot
-{84c15241-842b-49c3-8188-e6270a3d07c5}=Meta+F1,none,telegram
-{97dc0cb0-cc5b-460c-83aa-2053436fe028}=Ctrl+Alt+F,none,dolphin
 {aaa04999-353b-4814-9aee-a272d3692a47}=Shift+Print,none,Take Full Screen Screenshot
-{c13b21c9-7f40-4633-bad2-3c6c9828516a}=Ctrl+Alt+S,none,settings
-{cb8ededd-d216-4afd-978d-90e117401a0f}=Ctrl+Alt+B,none,chrome
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 {e748c1b7-f6c8-4f01-9eaf-a29b8f886736}=Meta+Print,none,Take Active Window Screenshot
 
@@ -243,6 +244,18 @@ playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
+[org.kde.dolphin.desktop]
+_k_friendly_name=Dolphin
+_launch=Meta+E\tCtrl+Alt+F,Meta+E,Dolphin
+
+[org.kde.spectacle.desktop]
+ActiveWindowScreenShot=,Meta+Print,Capture Active Window
+CurrentMonitorScreenShot=,none,Capture Current Monitor
+FullScreenScreenShot=,Shift+Print,Capture Entire Desktop
+RectangularRegionScreenShot=,Meta+Shift+Print,Capture Rectangular Region
+_k_friendly_name=Spectacle
+_launch=,Print,Launch Spectacle
+
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=none,Keyboard Brightness Down,Decrease Keyboard Brightness
 Decrease Screen Brightness=none,Monitor Brightness Down,Decrease Screen Brightness
@@ -284,6 +297,14 @@ show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,none,Show Barcode...
 show-on-mouse-pos=none,none,Open Klipper at Mouse Position
 stop current activity=,Meta+S,Stop Current Activity
+
+[telegramdesktop.desktop]
+_k_friendly_name=Launch Telegram Desktop
+_launch=Meta+F1,none,Launch Telegram Desktop
+
+[vk.desktop]
+_k_friendly_name=Launch VK Messenger
+_launch=Meta+F2,none,Launch VK Messenger
 
 [wacomtablet]
 Map to fullscreen=Meta+Ctrl+F,Meta+Ctrl+F,Map to fullscreen
