@@ -25,5 +25,7 @@
             }
         }
     },
-    "suggest.noselect": false
+    "suggest.noselect": false,
+    "yaml.format.enable": true,
+    "yaml.completion": true
 }
