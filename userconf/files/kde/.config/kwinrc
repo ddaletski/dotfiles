@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js
+update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:animation-speed
 
 [Compositing]
 OpenGLIsUnsafe=true
