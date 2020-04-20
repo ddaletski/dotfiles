@@ -54,6 +54,12 @@ CommandWindow2=Activate and pass click
 CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
+[NightColor]
+Active=true
+LatitudeAuto=53.8996
+LongitudeAuto=27.5678
+NightTemperature=3100
+
 [Plugins]
 cubeslideEnabled=false
 desktopchangeosdEnabled=false
@@ -124,4 +130,4 @@ ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
 library=org.kde.breeze
-theme=
+theme=Breeze

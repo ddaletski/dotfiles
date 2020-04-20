@@ -1,9 +1,9 @@
 [Layout]
 DisplayNames=,
-LayoutList=us,ru
+LayoutList=ru,us
 LayoutLoopCount=-1
 Model=pc101
-Options=grp:alt_shift_toggle
+Options=grp:alt_shift_toggle,compose:caps
 ResetOldOptions=true
 ShowFlag=false
 ShowLabel=true

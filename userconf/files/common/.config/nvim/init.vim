@@ -30,7 +30,7 @@ set foldmethod=indent
 set foldlevel=99
 set colorcolumn=100
 
-colorscheme onehalflight
+colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 
 
