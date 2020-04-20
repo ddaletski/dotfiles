@@ -1,5 +1,5 @@
 tilda_config_version="1.5.0"
-command="tmux -a -S tildaTmux"
+command="tmux new-session -A -s tilda"
 font="Monospace 11"
 key="<Super>grave"
 addtab_key="<Shift><Control>t"
