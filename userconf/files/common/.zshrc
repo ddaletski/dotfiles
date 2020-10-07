@@ -93,6 +93,11 @@ display_local() {
   export DISPLAY=:0
 }
 
+display_wsl() {
+  export DISPLAY=$(ip route | awk '{print $3; exit}'):0
+  export LIBGL_ALWAYS_INDIRECT=1
+}
+
 display_remote() {
   export DISPLAY=localhost:10.0
 }
