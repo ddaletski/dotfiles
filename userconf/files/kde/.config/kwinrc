@@ -2,7 +2,7 @@
 update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:animation-speed
 
 [Compositing]
-OpenGLIsUnsafe=true
+OpenGLIsUnsafe=false
 
 [Desktops]
 Id_1=8adc9b0b-cfad-466b-8f68-99e1cca6adc3
@@ -56,8 +56,8 @@ CommandWindowWheel=Scroll
 
 [NightColor]
 Active=true
-LatitudeAuto=53.8996
-LongitudeAuto=27.5678
+LatitudeAuto=50.0529
+LongitudeAuto=19.9681
 NightTemperature=3100
 
 [Plugins]
