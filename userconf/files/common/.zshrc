@@ -106,6 +106,14 @@ brightness() {
   xrandr -q | grep " connected"  | cut -d' ' -f 1 | parallel -n1 xrandr --output {} --brightness $1
 }
 
+icl() {
+  xclip -sel clip -i
+}
+
+ocl() {
+  xclip -sel clip -o
+}
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
