@@ -1,5 +1,5 @@
 tilda_config_version="1.5.0"
-command="/bin/zsh"
+command="/bin/tmux new-session -A -s tilda"
 font="Monospace 11"
 key="<Super>grave"
 addtab_key="<Shift><Control>t"
@@ -31,7 +31,7 @@ web_browser="xdg-open"
 increase_font_size_key="<Control>equal"
 decrease_font_size_key="<Control>minus"
 normalize_font_size_key="<Control>0"
-# show_on_monitor=""
+show_on_monitor=""
 word_chars="-A-Za-z0-9,./?%&#:_"
 lines=5000
 x_pos=0

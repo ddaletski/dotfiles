@@ -1,7 +1,10 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
+switch-to-activity-0edc4cf8-b173-49a2-9f54-bc38d6c62285=none,none,Switch to activity "Default"
 switch-to-activity-c823f49c-7def-4b54-96d6-518b2cce1dd3=none,none,Switch to activity "Default"
 switch-to-activity-d54ebc33-d6fc-47b3-bf4b-0121928334c1=none,none,Switch to activity "Default"
+switch-to-activity-e3ac0c88-f6a3-4c76-9a85-0bbf953ecac2=none,none,Switch to activity "Default"
+switch-to-activity-facc6565-2fbb-4c9e-a1e6-93f4f9b51923=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
@@ -31,8 +34,8 @@ _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
-_k_friendly_name=KDE Daemon
-{1d2762ce-a6a2-46b3-aa0f-748f147cf302}=Ctrl+Alt+T,none,Launch Konsole
+_k_friendly_name=Custom Shortcuts Service
+{7dee3034-5517-4bbe-82e9-3afcb9dad42c}=,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
@@ -50,11 +53,11 @@ _k_friendly_name=KRunner
 _launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [ksmserver]
-Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,none,Halt Without Confirmation
+Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Halt Without Confirmation
 Lock Session=\tCtrl+Alt+L\tScreensaver,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
-Log Out=Ctrl+Alt+Del,none,Log Out
-Log Out Without Confirmation=Ctrl+Alt+Shift+Del,none,Log Out Without Confirmation
-Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,none,Reboot Without Confirmation
+Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Log Out
+Log Out Without Confirmation=Ctrl+Alt+Shift+Del,Ctrl+Alt+Shift+Del,Log Out Without Confirmation
+Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,Ctrl+Alt+Shift+PgUp,Reboot Without Confirmation
 _k_friendly_name=Session Management
 
 [kwin]
@@ -254,12 +257,13 @@ activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 22=Alt+F1,none,Activate Application Menu Widget
+activate widget 3=,none,Activate Application Launcher Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents...
-manage activities=Meta+Q,Meta+Q,Activities...
+manage activities=Meta+Q,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,none,Walk through activities
 previous activity=Meta+Shift+Tab,none,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
