@@ -1,0 +1,13 @@
+[Layout]
+DisplayNames=,
+LayoutList=us,ru
+LayoutLoopCount=-1
+Model=pc86
+Options=terminate:ctrl_alt_bksp,grp:lalt_lshift_toggle,compose:caps,compose:ralt
+ResetOldOptions=true
+ShowFlag=false
+ShowLabel=true
+ShowLayoutIndicator=true
+ShowSingle=false
+SwitchMode=Global
+Use=true
