@@ -12,11 +12,11 @@ Switch keyboard layout to Russian=none,none,Switch keyboard layout to Russian
 Switch to Next Keyboard Layout=Ctrl+Space,none,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
-[google-chrome.desktop]
-_k_friendly_name=Launch Google Chrome
-_launch=Ctrl+Alt+B,none,Launch Google Chrome
-new-private-window=,none,New Incognito Window
-new-window=none,none,New Window
+[firefox.desktop]
+_k_friendly_name=Firefox
+_launch=Ctrl+Alt+B\tMeta+F,,Firefox
+new-private-window=,,New Private Window
+new-window=,,New Window
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off

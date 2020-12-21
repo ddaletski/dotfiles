@@ -103,7 +103,7 @@ display_remote() {
 }
 
 brightness() {
-  xrandr -q | grep " connected"  | cut -d' ' -f 1 | parallel -n1 xrandr --output {} --brightness $1
+  sudo ddcutil setvcp 10 $1
 }
 
 icl() {
