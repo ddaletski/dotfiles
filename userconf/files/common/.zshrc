@@ -11,6 +11,10 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' original true
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' rehash true  # automatically find new executables in path zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle :compinstall filename '/$HOME/.zshrc'
 
 autoload -Uz compinit
@@ -18,10 +22,12 @@ compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt extendedglob nomatch
-unsetopt beep
+unsetopt nobeep
+setopt histignorealldups  # If a new command is a duplicate, remove the older one
+setopt nocaseglob # Case insensitive globbing
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
@@ -62,6 +68,16 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+
+## Plugins section: Enable fish style features
+# Use syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Use history substring search
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# search bindings
+bindkey '^k' history-substring-search-up			
+bindkey '^j' history-substring-search-down
 
 cdl() {
     cd `readlink $1`
