@@ -9,10 +9,10 @@ Translucency=true
 RememberFullscreen=true
 
 [Desktop Entry]
-DefaultProfile=Profile 1.profile
+DefaultProfile=
 
 [Favorite Profiles]
-Favorites=Profile 1.profile
+Favorites=
 
 [Window]
 Height=100
