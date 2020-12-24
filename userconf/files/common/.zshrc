@@ -119,6 +119,7 @@ display_remote() {
 }
 
 brightness() {
+  sudo modprobe i2c-dev
   sudo ddcutil setvcp 10 $1
 }
 
@@ -130,6 +131,9 @@ ocl() {
   xclip -sel clip -o
 }
 
+zf() {
+    zip -r0 $1.zip $1
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

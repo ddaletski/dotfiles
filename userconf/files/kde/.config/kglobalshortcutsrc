@@ -292,3 +292,7 @@ Toggle screen map selection=Meta+Ctrl+M,Meta+Ctrl+M,Toggle between all screens
 Toggle stylus mode=Meta+Ctrl+S,Meta+Ctrl+S,Toggle the Stylus Tool Relative/Absolute
 Toggle touch tool=Meta+Ctrl+T,Meta+Ctrl+T,Enable/Disable the Touch Tool
 _k_friendly_name=Wacom Tablet
+
+[yakuake]
+_k_friendly_name=Yakuake
+toggle-window-state=Meta+`,F12,Open/Retract Yakuake

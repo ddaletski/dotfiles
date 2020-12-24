@@ -1,0 +1,21 @@
+[Animation]
+Frames=0
+
+[Appearance]
+Skin=breath2
+Translucency=true
+
+[Behavior]
+RememberFullscreen=true
+
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[Favorite Profiles]
+Favorites=Profile 1.profile
+
+[Window]
+Height=100
+KeepOpen=true
+ToggleToFocus=true
+Width=100
