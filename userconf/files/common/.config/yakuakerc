@@ -9,7 +9,7 @@ Translucency=true
 RememberFullscreen=true
 
 [Desktop Entry]
-DefaultProfile=
+DefaultProfile=profile1.profile
 
 [Favorite Profiles]
 Favorites=
