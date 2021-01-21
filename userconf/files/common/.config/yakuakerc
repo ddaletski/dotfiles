@@ -2,7 +2,6 @@
 Frames=0
 
 [Appearance]
-Skin=breath2
 Translucency=true
 
 [Behavior]
@@ -10,6 +9,9 @@ RememberFullscreen=true
 
 [Desktop Entry]
 DefaultProfile=profile1.profile
+
+[Dialogs]
+FirstRun=false
 
 [Favorite Profiles]
 Favorites=

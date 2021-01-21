@@ -1,6 +1,7 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
 switch-to-activity-0edc4cf8-b173-49a2-9f54-bc38d6c62285=none,none,Switch to activity "Default"
+switch-to-activity-bcf1f6ab-4df1-4f3d-91e3-c82f2e266235=none,none,Switch to activity "Default"
 switch-to-activity-c823f49c-7def-4b54-96d6-518b2cce1dd3=none,none,Switch to activity "Default"
 switch-to-activity-d54ebc33-d6fc-47b3-bf4b-0121928334c1=none,none,Switch to activity "Default"
 switch-to-activity-e3ac0c88-f6a3-4c76-9a85-0bbf953ecac2=none,none,Switch to activity "Default"
@@ -28,9 +29,8 @@ _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
-_k_friendly_name=Custom Shortcuts Service
-{04bdedb1-dadb-4a82-b89e-b29071fa1a92}=Meta+F12,none,Flameshot
-{7dee3034-5517-4bbe-82e9-3afcb9dad42c}=,none,Launch Konsole
+_k_friendly_name=KDE Daemon
+{52c4cf15-a710-4e7c-bd53-27ddcbd5e974}=Ctrl+Alt+T,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
@@ -255,13 +255,14 @@ activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 100=none,none,Activate Application Dashboard Widget
 activate widget 22=Alt+F1,none,Activate Application Menu Widget
 activate widget 36=none,none,Activate Weather Report Widget
+activate widget 67=none,none,Activate Application Menu Widget
 activate widget 90=none,none,Activate Translator Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents...
-manage activities=Meta+Q,Meta+Q,Show Activity Switcher
+manage activities=Meta+Q,Meta+Q,Activities...
 next activity=Meta+Tab,Meta+Tab,Walk through activities
 previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
