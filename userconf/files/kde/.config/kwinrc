@@ -2,6 +2,7 @@
 update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:animation-speed,kwin.upd:replace-scalein-with-scale,kwin.upd:auto-bordersize
 
 [Compositing]
+Backend=XRender
 OpenGLIsUnsafe=true
 
 [Desktops]
@@ -43,7 +44,6 @@ CommandActiveTitlebar3=Operations menu
 CommandAll1=Move
 CommandAll2=Toggle raise and lower
 CommandAll3=Resize
-CommandAllKey=Alt
 CommandAllWheel=Nothing
 CommandInactiveTitlebar1=Activate and raise
 CommandInactiveTitlebar2=Start window tab drag
@@ -61,10 +61,8 @@ LongitudeAuto=19.9681
 NightTemperature=3100
 
 [Plugins]
-cubeslideEnabled=false
 desktopchangeosdEnabled=false
 kwin4_effect_fadedesktopEnabled=false
-slideEnabled=true
 windowgeometryEnabled=false
 
 [Script-desktopchangeosd]

@@ -46,6 +46,7 @@ kleosignencryptfolder=true
 kleosignfilescms=true
 kleosignfilesopenpgp=true
 kompare=true
+mountisoaction=true
 moveAndGetPublicURL=true
 openTerminalHere=true
 plasmavaultfileitemaction=true
