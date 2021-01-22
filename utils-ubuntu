@@ -5,8 +5,11 @@ tmux
 yakuake
 ranger
 exa
+ripgrep
 fd-find
 neovim
 nodejs
 ddcutil
 flameshot
+gnome-keyring
+parallel
