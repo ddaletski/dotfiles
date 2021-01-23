@@ -134,6 +134,43 @@ zf() {
     zip -r0 $1.zip $1
 }
 
+# translator
+
+ru2en() {
+    echo $@ | parallel -n1 translate -s ru -d en '{}'
+}
+
+en2ru() {
+    echo $@ | parallel -n1 translate -s en -d ru '{}'
+}
+
+ru2pl() {
+    echo $@ | parallel -n1 translate -s ru -d pl '{}'
+}
+
+pl2ru() {
+    echo $@ | parallel -n1 translate -s pl -d ru '{}'
+}
+
+ru2de() {
+    echo $@ | parallel -n1 translate -s ru -d de '{}'
+}
+
+de2ru() {
+    echo $@ | parallel -n1 translate -s de -d ru '{}'
+}
+
+ru2fr() {
+    echo $@ | parallel -n1 translate -s ru -d fr '{}'
+}
+
+fr2ru() {
+    echo $@ | parallel -n1 translate -s fr -d ru '{}'
+}
+
+#########
+
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

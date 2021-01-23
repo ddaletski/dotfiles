@@ -9,9 +9,18 @@ switch-to-activity-facc6565-2fbb-4c9e-a1e6-93f4f9b51923=none,none,Switch to acti
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
+Switch keyboard layout to EurKEY (US based layout with European letters)=none,none,Switch keyboard layout to EurKEY (US based layout with European letters)
+Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
 Switch keyboard layout to Russian=none,none,Switch keyboard layout to Russian
 Switch to Next Keyboard Layout=Ctrl+Space,none,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
+
+[flameshot.desktop]
+Capture=Meta+F12,,Take screenshot
+Configure=,,Configure
+Launcher=,,Open launcher
+_k_friendly_name=Flameshot
+_launch=none,,Flameshot
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off

@@ -1,9 +1,9 @@
 [Layout]
 DisplayNames=,
-LayoutList=us,ru
+LayoutList=pl,ru
 LayoutLoopCount=-1
-Model=pc86
-Options=terminate:ctrl_alt_bksp,grp:lalt_lshift_toggle,compose:caps,compose:ralt
+Model=pc101
+Options=terminate:ctrl_alt_bksp,grp:lalt_lshift_toggle,compose:caps,compose:ralt,lv3:lalt_switch
 ResetOldOptions=true
 ShowFlag=false
 ShowLabel=true
