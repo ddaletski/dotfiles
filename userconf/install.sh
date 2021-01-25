@@ -83,4 +83,10 @@ echo `colored blue installing some apps`
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# nvm and nodejs
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+nvm install --lts
+
+# rustup, cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > .rustup.sh
+bash .rustup.sh -y
