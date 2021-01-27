@@ -109,7 +109,7 @@ display_local() {
 }
 
 display_wsl() {
-  export DISPLAY=$(ip route | awk '{print $3; exit}'):0
+  export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
   export LIBGL_ALWAYS_INDIRECT=1
 }
 
