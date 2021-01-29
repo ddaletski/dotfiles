@@ -85,7 +85,7 @@ cdl() {
 export EDITOR=nvim
 
 remove_from_path() {
-        export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")
+    export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")
 }
 
 bbstatus() {
@@ -169,7 +169,10 @@ fr2ru() {
 }
 
 #########
+#
+[ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 
+#########
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

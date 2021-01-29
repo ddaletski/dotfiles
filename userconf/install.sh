@@ -90,3 +90,4 @@ nvm install --lts
 # rustup, cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > .rustup.sh
 bash .rustup.sh -y
+cargo install sd du-dust exa ripgrep

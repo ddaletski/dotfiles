@@ -4,12 +4,10 @@ zsh
 tmux
 yakuake
 ranger
-exa
-ripgrep
-fd-find
 neovim
 ddcutil
 flameshot
 gnome-keyring
 parallel
 translate-shell
+jq

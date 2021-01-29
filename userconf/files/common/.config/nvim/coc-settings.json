@@ -5,9 +5,6 @@
             "filetypes": [
                 "c",
                 "cpp",
-                "cuda",
-                "objc",
-                "objcpp",
                 "h",
                 "hpp"
             ],
@@ -20,7 +17,7 @@
             ],
             "initializationOptions": {
                 "cache": {
-                    "directory": ".ccls-cache"
+                    "directory": "/tmp/ccls-cache"
                 }
             }
         }
