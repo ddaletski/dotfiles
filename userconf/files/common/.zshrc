@@ -134,6 +134,11 @@ zf() {
     zip -r0 $1.zip $1
 }
 
+notify() {
+    notify-send "$@" &> /dev/null & ; disown
+    ffplay -autoexit -nodisp ~/.local/share/dotfiles-resources/notifications/done1.mp3 &> /dev/null & ; disown
+}
+
 # translator
 
 ru2en() {
