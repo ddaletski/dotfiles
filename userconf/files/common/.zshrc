@@ -178,6 +178,7 @@ fr2ru() {
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 
 #########
+# nvm
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -185,6 +186,12 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -d ~/.cargo ] && export PATH=$PATH:$HOME/.cargo/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#########
+# golang 
+
+[ -d ~/.local/go/bin ] && export PATH=$PATH:$HOME/.local/go/bin
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

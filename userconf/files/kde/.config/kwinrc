@@ -2,15 +2,18 @@
 update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:animation-speed,kwin.upd:replace-scalein-with-scale,kwin.upd:auto-bordersize
 
 [Compositing]
-Backend=XRender
+GLCore=true
 GLTextureFilter=1
-OpenGLIsUnsafe=false
+OpenGLIsUnsafe=true
 
 [Desktops]
 Id_1=8adc9b0b-cfad-466b-8f68-99e1cca6adc3
-Id_2=577f5931-39b6-42ed-9b63-513dd220dcf3
-Id_3=30bf68a5-ea72-4b7e-9299-0623cee6d723
-Id_4=34759198-030d-4ca2-a59a-7b4549300318
+Id_2=5f6841ee-569e-4d2c-85bb-5aa0ce96d1ee
+Id_3=c74dac62-2665-4d7b-859e-a969a87d98c9
+Id_4=957d6972-2e09-4321-8e87-7a4d1c390bb0
+Name_2=New Desktop
+Name_3=New Desktop
+Name_4=New Desktop
 Number=4
 Rows=2
 

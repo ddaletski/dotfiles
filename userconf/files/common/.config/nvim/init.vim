@@ -53,6 +53,7 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+set smartcase
 
 " substitution
 :set inccommand=split

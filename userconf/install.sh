@@ -95,3 +95,11 @@ nvm install --lts
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > .rustup.sh
 bash .rustup.sh -y
 cargo install sd du-dust exa ripgrep
+
+# go
+
+case "$OSTYPE" in
+  darwin*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.darwin-amd64.tar.gz ;;
+  linux*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.linux-amd64.tar.gz ;;
+esac
+tar -C $HOME/.local -xzf /tmp/go.tar.gz
