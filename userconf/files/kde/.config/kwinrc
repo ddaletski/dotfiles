@@ -4,7 +4,7 @@ update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-eff
 [Compositing]
 GLCore=true
 GLTextureFilter=1
-OpenGLIsUnsafe=true
+OpenGLIsUnsafe=false
 
 [Desktops]
 Id_1=8adc9b0b-cfad-466b-8f68-99e1cca6adc3

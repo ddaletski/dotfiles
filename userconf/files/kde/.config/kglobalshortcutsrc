@@ -1,6 +1,7 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
 switch-to-activity-0edc4cf8-b173-49a2-9f54-bc38d6c62285=none,none,Switch to activity "Default"
+switch-to-activity-22ceabe1-9826-4463-913f-392361ec57fe=none,none,Switch to activity "Default"
 switch-to-activity-bcf1f6ab-4df1-4f3d-91e3-c82f2e266235=none,none,Switch to activity "Default"
 switch-to-activity-c823f49c-7def-4b54-96d6-518b2cce1dd3=none,none,Switch to activity "Default"
 switch-to-activity-d54ebc33-d6fc-47b3-bf4b-0121928334c1=none,none,Switch to activity "Default"
@@ -14,13 +15,6 @@ Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
 Switch keyboard layout to Russian=none,none,Switch keyboard layout to Russian
 Switch to Next Keyboard Layout=Ctrl+Space,none,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
-
-[flameshot.desktop]
-Capture=Meta+F12,,Take screenshot
-Configure=,,Configure
-Launcher=,,Open launcher
-_k_friendly_name=Flameshot
-_launch=none,,Flameshot
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
@@ -38,8 +32,9 @@ _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
-_k_friendly_name=KDE Daemon
-{52c4cf15-a710-4e7c-bd53-27ddcbd5e974}=Ctrl+Alt+T,none,Launch Konsole
+_k_friendly_name=Custom Shortcuts Service
+{96922e52-8cf5-4898-925c-8b73efe08a02}=,none,Launch Konsole
+{c658a49c-b3f8-4b57-b46e-972f71723a2e}=Print,none,flameshot
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
@@ -50,6 +45,11 @@ increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Increase Mi
 increase_volume=Volume Up,Volume Up,Increase Volume
 mic_mute=Microphone Mute,Microphone Mute,Mute Microphone
 mute=Volume Mute,Volume Mute,Mute
+
+[konversation]
+_k_friendly_name=Konversation
+next_active_tab=none,none,Next Active Tab
+toggle_mainwindow_visibility=none,none,Show/Hide Konversation
 
 [krunner.desktop]
 RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Run command on clipboard contents
@@ -234,7 +234,7 @@ CurrentMonitorScreenShot=,none,Capture Current Monitor
 FullScreenScreenShot=Shift+Print,Shift+Print,Capture Entire Desktop
 RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
 _k_friendly_name=Spectacle
-_launch=Print,Print,Launch Spectacle
+_launch=,Print,Launch Spectacle
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
@@ -262,7 +262,7 @@ activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 100=none,none,Activate Application Dashboard Widget
-activate widget 22=Alt+F1,none,Activate Application Menu Widget
+activate widget 22=none,none,Activate Application Menu Widget
 activate widget 36=none,none,Activate Weather Report Widget
 activate widget 67=none,none,Activate Application Menu Widget
 activate widget 90=none,none,Activate Translator Widget
@@ -271,7 +271,7 @@ clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents...
-manage activities=Meta+Q,Meta+Q,Activities...
+manage activities=Meta+Q,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,Meta+Tab,Walk through activities
 previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard

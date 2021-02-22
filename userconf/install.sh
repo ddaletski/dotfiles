@@ -92,14 +92,26 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 nvm install --lts
 
 # rustup, cargo
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > .rustup.sh
-bash .rustup.sh -y
-cargo install sd du-dust exa ripgrep
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
+bash /tmp/rustup.sh -y
+cargo install du-dust
 
 # go
 
-case "$OSTYPE" in
-  darwin*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.darwin-amd64.tar.gz ;;
-  linux*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.linux-amd64.tar.gz ;;
-esac
-tar -C $HOME/.local -xzf /tmp/go.tar.gz
+if [ ! -d $HOME/.local/go ]
+then
+    case "$OSTYPE" in
+      darwin*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.darwin-amd64.tar.gz ;;
+      linux*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.linux-amd64.tar.gz ;;
+    esac
+    tar -C $HOME/.local -xzf /tmp/go.tar.gz
+fi
+
+
+# systemd user configs
+mkdir -p $HOME/.config/systemd/user
+
+export NGROK_EXEC=$(which ngrok)
+cat templates/ngrok-ssh.service | envsubst > $HOME/.config/systemd/user/ngrok-ssh.service
+systemctl --user daemon-reload
+systemctl --user enable --now ngrok-ssh.service
