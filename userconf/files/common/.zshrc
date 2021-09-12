@@ -5,6 +5,8 @@
 
 fpath+=~/.zfunc
 
+zmodload zsh/mathfunc
+
 zstyle ':completion:*' completer _expand _complete _ignored #_correct
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*'
 zstyle ':completion:*' list-colors ''
@@ -56,9 +58,6 @@ esac
 
 
 # utils overrides
-alias find='fd'
-alias grep='rg'
-
 alias ls='exa'
 alias ll='ls -alF'
 alias l='ls --icons'
@@ -171,6 +170,35 @@ ru2fr() {
 
 fr2ru() {
     echo $@ | parallel -n1 translate -s fr -d ru '{}'
+}
+
+
+#########
+
+podatek_r() {
+    above_17=$(($1 > 85528 ? $1 - 85528 : 0))
+    below_17=$(($1 > 85528 ? 85528 : $1))
+
+    tax=$((int(below_17 * 0.17 + above_17 * 0.32)))
+    net=$((int($1 - tax)))
+
+    tax_usd=$((int($tax * 0.26)))
+    net_usd=$((int($net * 0.26)))
+
+    echo "$net PLN / $tax PLN : $net_usd$ / $tax_usd$"
+}
+
+podatek_m() {
+    above_17=$(($1 > 7250 ? $1 - 7250 : 0))
+    below_17=$(($1 > 7250 ? 7250 : $1))
+
+    tax=$((int(below_17 * 0.17 + above_17 * 0.32)))
+    net=$((int($1 - tax)))
+
+    tax_usd=$((int($tax * 0.26)))
+    net_usd=$((int($net * 0.26)))
+
+    echo "$net PLN / $tax PLN : $net_usd$ / $tax_usd$"
 }
 
 #########

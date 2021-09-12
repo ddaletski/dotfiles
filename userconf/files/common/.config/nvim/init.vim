@@ -20,6 +20,8 @@ Plug 'shougo/echodoc'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
+Plug 'ziglang/zig.vim'
+
 "Initialize plugin system
 call plug#end()
 

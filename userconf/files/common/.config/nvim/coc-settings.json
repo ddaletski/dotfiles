@@ -20,6 +20,12 @@
                     "directory": "/tmp/ccls-cache"
                 }
             }
+        },
+        "zig": {
+            "command": "zls",
+            "filetypes": [
+                "zig"
+            ]
         }
     },
     "suggest.noselect": false,

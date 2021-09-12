@@ -59,6 +59,7 @@ sendto=true
 shareFolder=true
 sharefileitemaction=true
 slideshow=true
+slideshowfileitemaction=true
 smb2rdc=true
 tagsfileitemaction=true
 viewPrevious=true
