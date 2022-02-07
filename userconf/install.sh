@@ -109,9 +109,9 @@ fi
 
 
 # systemd user configs
-mkdir -p $HOME/.config/systemd/user
-
-export NGROK_EXEC=$(which ngrok)
-cat templates/ngrok-ssh.service | envsubst > $HOME/.config/systemd/user/ngrok-ssh.service
-systemctl --user daemon-reload
-systemctl --user enable --now ngrok-ssh.service
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export NGROK_EXEC=$(which ngrok)
+    cat templates/ngrok-ssh.service | envsubst > $HOME/.config/systemd/user/ngrok-ssh.service
+    systemctl --user daemon-reload
+    systemctl --user enable --now ngrok-ssh.service
+fi
