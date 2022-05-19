@@ -204,6 +204,7 @@ podatek_m() {
 #########
 #
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
+[ -d /home/linuxbrew/.linuxbrew/bin ] && export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 #########
 # nvm
