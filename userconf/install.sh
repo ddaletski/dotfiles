@@ -88,7 +88,7 @@ cp -r resources $HOME/.local/share/dotfiles-resources
 
 echo `colored blue installing additional package managers`
 # nvm and nodejs
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 nvm install --lts
 
 # rustup, cargo
@@ -110,6 +110,10 @@ fi
 
 # systemd user configs
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+mkdir -p $HOME/.config/systemd/user
+
+if [ -x "$(command -v ngrok)" ]
+then
     export NGROK_EXEC=$(which ngrok)
     cat templates/ngrok-ssh.service | envsubst > $HOME/.config/systemd/user/ngrok-ssh.service
     systemctl --user daemon-reload

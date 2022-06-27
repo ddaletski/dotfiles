@@ -56,12 +56,6 @@ esac
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-
-# utils overrides
-alias ls='exa'
-alias ll='ls -alF'
-alias l='ls --icons'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -210,6 +204,7 @@ podatek_m() {
 #########
 #
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
+[ -d /home/linuxbrew/.linuxbrew/bin ] && export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 #########
 # nvm
@@ -227,6 +222,9 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -d ~/.local/go/bin ] && export PATH=$PATH:$HOME/.local/go/bin
 
+########
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$($HOME/miniconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -238,3 +236,4 @@ else
     fi
 fi
 unset __conda_setup
+# <<< conda initialize <<<
