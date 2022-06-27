@@ -20,6 +20,20 @@ colored() {
     echo -e "\033[${color}m${@:2}\033[m"
 }
 
+# brew
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo `colored blue installing homebrew`
+    if [ ! -x "$(command -v brew)" ]; then
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        mkdir -p ~/.zfunc
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' > ~/.zfunc/_brew
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
+        brew install coreutils
+        export PATH=$PATH:/opt/homebrew/bin
+    fi
+fi
+
 
 link_recursively() {
 # $1 src dir
@@ -87,35 +101,28 @@ echo `colored blue installing resources`
 cp -r resources $HOME/.local/share/dotfiles-resources
 
 echo `colored blue installing additional package managers`
+
 # nvm and nodejs
+echo `colored blue nvm`
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 nvm install --lts
 
 # rustup, cargo
+echo `colored blue rustup`
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
 bash /tmp/rustup.sh -y
 cargo install du-dust
 
-# go
-
-if [ ! -d $HOME/.local/go ]
-then
-    case "$OSTYPE" in
-      darwin*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.darwin-amd64.tar.gz ;;
-      linux*) wget -O /tmp/go.tar.gz https://golang.org/dl/go1.15.7.linux-amd64.tar.gz ;;
-    esac
-    tar -C $HOME/.local -xzf /tmp/go.tar.gz
-fi
-
+echo `colored blue other utilities`
 
 # systemd user configs
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 mkdir -p $HOME/.config/systemd/user
-
-if [ -x "$(command -v ngrok)" ]
-then
-    export NGROK_EXEC=$(which ngrok)
-    cat templates/ngrok-ssh.service | envsubst > $HOME/.config/systemd/user/ngrok-ssh.service
-    systemctl --user daemon-reload
-    systemctl --user enable --now ngrok-ssh.service
+    if [ -x "$(command -v ngrok)" ]
+    then
+        export NGROK_EXEC=$(which ngrok)
+        cat templates/ngrok-ssh.service | envsubst > $HOME/.config/systemd/user/ngrok-ssh.service
+        systemctl --user daemon-reload
+        systemctl --user enable --now ngrok-ssh.service
+    fi
 fi

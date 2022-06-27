@@ -202,9 +202,10 @@ podatek_m() {
 }
 
 #########
-#
+# path
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d /home/linuxbrew/.linuxbrew/bin ] && export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+[ -d /opt/homebrew/bin ] && export PATH=$PATH:/opt/homebrew/bin
 
 #########
 # nvm
@@ -216,11 +217,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -d ~/.cargo ] && export PATH=$PATH:$HOME/.cargo/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-#########
-# golang 
-
-[ -d ~/.local/go/bin ] && export PATH=$PATH:$HOME/.local/go/bin
 
 ########
 # >>> conda initialize >>>
