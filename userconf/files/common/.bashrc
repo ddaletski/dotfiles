@@ -148,3 +148,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
+
+#########
+# path
+[ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
+[ -d /home/linuxbrew/.linuxbrew/bin ] && export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+[ -d /opt/homebrew/bin ] && export PATH=$PATH:/opt/homebrew/bin
