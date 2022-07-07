@@ -76,18 +76,8 @@ find_loops() {
     done
 }
 
-for files_dir in `find files -maxdepth 1 -mindepth 1 -type d`
-do
-    echo `colored blue installing $files_dir configs`
-
-    echo `colored yellow cleaning symlink loops`
-    find_loops $files_dir
-
-    echo `colored yellow linking`
-    link_recursively `$READLINK -f $files_dir` $HOME $files_dir
-
-    echo `colored green done`
-done
+##########################################################
+############# install needed software ####################
 
 echo `colored blue installing zsh plugins`
 git clone https://github.com/zsh-users/zsh-history-substring-search ~/.local/share/zsh/plugins/zsh-history-substring-search
@@ -105,6 +95,9 @@ echo `colored blue installing additional package managers`
 # nvm and nodejs
 echo `colored blue nvm`
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 
 # rustup, cargo
@@ -113,6 +106,28 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
 bash /tmp/rustup.sh -y
 cargo install du-dust
 
+echo `colored blue installing spacevim`
+curl -sLf https://spacevim.org/install.sh | bash
+
+
+##########################################################
+############### symlink configs ##########################
+for files_dir in `find files -maxdepth 1 -mindepth 1 -type d`
+do
+    echo `colored blue installing $files_dir configs`
+
+    echo `colored yellow cleaning symlink loops`
+    find_loops $files_dir
+
+    echo `colored yellow linking`
+    link_recursively `$READLINK -f $files_dir` $HOME $files_dir
+
+    echo `colored green done`
+done
+
+
+##########################################################
+############### other ####################################
 echo `colored blue other utilities`
 
 # systemd user configs
