@@ -106,10 +106,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
 bash /tmp/rustup.sh -y
 cargo install du-dust
 
-echo `colored blue installing spacevim`
-curl -sLf https://spacevim.org/install.sh | bash
-
-
 ##########################################################
 ############### symlink configs ##########################
 for files_dir in `find files -maxdepth 1 -mindepth 1 -type d`
