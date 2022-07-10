@@ -27,6 +27,3 @@ let g:coc_global_extensions = ['coc-highlight', 'coc-python', 'coc-rust-analyzer
 
 let g:NERDCreateDefaultMappings = 0
 let g:buffergator_suppress_keymaps = 1
-let g:buffergator_viewport_split_policy = "t"
-let g:buffergator_autoupdate = 1
-let g:buffergator_hsplit_size = 5

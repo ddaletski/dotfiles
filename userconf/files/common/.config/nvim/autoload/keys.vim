@@ -3,15 +3,15 @@ let g:maplocalleader = ','
 set timeoutlen=500
 
 " buffet
-nnoremap <Leader><Tab> :Bufferlist<CR>
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
-noremap <C-t> :tabnew new-tab<CR>
+nnoremap <silent> <Leader><Tab> :BuffergatorToggle<CR>
+noremap <silent> <Tab> :bn<CR>
+noremap <silent> <S-Tab> :bp<CR>
+noremap <silent> <C-t> :tabnew new-tab<CR>
 
 " telescope
 nnoremap ` :Telescope<CR>
 
-"============ COC ===================
+"================== completion ===========================
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
@@ -32,15 +32,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Or use `complete_info` if your vim support it, like:
 inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
+"======================== other =========================
 " escape in terminal
 tnoremap <Esc> <C-\><C-n>
 
-" Use `[g` and `]g` to navigate diagnostics
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" 'Ctrl'+'/' comments
+let g:NERDToggleCheckAllLines = 1
+nnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<CR>
+xnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<CR>
+inoremap <silent> <C-_> <C-c>:call nerdcommenter#Comment('n', 'Toggle')<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -50,12 +50,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" 'Ctrl'+'/' comments
-let g:NERDToggleCheckAllLines = 1
-nnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<CR>
-xnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<CR>
-inoremap <silent> <C-_> <C-c>:call nerdcommenter#Comment('n', 'Toggle')<CR>
-
 "========================================================
 "================== keys helper =========================
 "========================================================
@@ -63,7 +57,7 @@ inoremap <silent> <C-_> <C-c>:call nerdcommenter#Comment('n', 'Toggle')<CR>
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 let g:which_key_space = { 'name': 'actions' }
 
-"================== language ============================
+"================== language specific ====================
 " Show all diagnostics
 nnoremap <silent> <leader>ld  :<C-u>CocList diagnostics<cr>
 " Manage extensions
@@ -79,6 +73,11 @@ nnoremap <silent> <leader>ls  :<C-u>CocList -I symbols<cr>
 xnoremap <silent> <leader>lf  <Plug>(coc-format-selected)
 nnoremap <silent> <leader>lf  <Plug>(coc-format-selected)
 nnoremap <silent> <leader>lF  :call CocAction('format')<cr>
+
+
+" docs
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <leader>lD :call <SID>show_documentation()<CR>
 
 " rename current word
 nnoremap <leader>lr <Plug>(coc-rename)
@@ -122,13 +121,15 @@ let g:which_key_space.f = {
 
 "===================== vim ===============================
 
-function! ReloadAll() abort
-    source $MYVIMRC
-    " TODO: reload current buffer to redraw reloaded powerline
-endfunction
+if (!exists('*ReloadAll'))
+    function! ReloadAll() abort
+        source $MYVIMRC
+        " TODO: reload current buffer to redraw reloaded powerline
+    endfunction
+endif
 
 " reload init.vim and all autoload configs
-nnoremap <silent> <Leader>vr :source $MYVIMRC<cr>
+nnoremap <silent> <Leader>vr :call ReloadAll()<cr>
 
 " edit init.vim
 nnoremap <silent> <Leader>ve :e $MYVIMRC<cr>
@@ -146,6 +147,7 @@ nnoremap <silent> gt <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 
+" TODO: register 'g' in helper w/o resetting 'gg' and other default bindings
 "nnoremap <silent> g :WhichKey 'g'<CR>
 "let g:which_key_g = {
       "\ 'name' : 'goto',
