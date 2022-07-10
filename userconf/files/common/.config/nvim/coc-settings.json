@@ -30,5 +30,6 @@
     },
     "suggest.noselect": false,
     "yaml.format.enable": true,
-    "yaml.completion": true
+    "yaml.completion": true,
+    "colors.filetypes": ["*"]
 }

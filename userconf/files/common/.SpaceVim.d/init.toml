@@ -42,9 +42,6 @@
   enable = false
 
 [[layers]]
-  name = "ctrlp"
-
-[[layers]]
   name = "debug"
 
 [[layers]]
@@ -55,6 +52,11 @@
 
 [[layers]]
   name = "lang#c"
+  [layer.clang_std]
+  c = "c11"
+  cpp = "c++1z"
+  objc = "c11"
+  objcpp = "c++1z"
 
 [[layers]]
   name = "lang#javascript"
@@ -70,11 +72,11 @@
 
 [[layers]]
   name = "lsp"
+  enabled_clients = ['pylsp']
   filetypes = [
     "c",
     "cpp",
     "python",
-    "rust",
     "javascript",
     "sh"
   ]
@@ -84,3 +86,10 @@
 
 [[layers]]
   name = "test"
+
+[[layers]]
+  name = "telescope"
+
+[[custom_plugins]]
+  repo = 'sandeepcr529/Buffet.vim'
+  merged = false
