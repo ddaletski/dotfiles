@@ -82,16 +82,22 @@ nnoremap <silent> <leader>lD :call <SID>show_documentation()<CR>
 " rename current word
 nnoremap <leader>lr <Plug>(coc-rename)
 
+nmap <silent> <leader>lg <Plug>(coc-codeaction-line)
+xmap <silent> <leader>lg <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>lG <Plug>(coc-codeaction)
+
 let g:which_key_space.l = {
       \ 'name' : '+language',
       \ 'd' : 'diagnostics',
-      \ 'e' : 'extensions',
-      \ 'c' : 'commands',
-      \ 'o' : 'outline',
+      \ 'e' : 'coc extensions',
+      \ 'c' : 'coc commands',
+      \ 'o' : 'file outline',
       \ 's' : 'symbols',
       \ 'f' : 'format selected',
       \ 'F' : 'format buffer',
       \ 'r' : 'rename symbol',
+      \ 'g' : 'gen docs under cursor',
+      \ 'G' : 'gen docs for file',
       \ }
 
 "==================== errors =============================
@@ -128,16 +134,35 @@ if (!exists('*ReloadAll'))
     endfunction
 endif
 
+function! AutoloadDir() abort
+    let vimrc = $MYVIMRC
+    let vimDir = fnamemodify(vimrc, ':h')
+    return vimDir . '/autoload'
+endfunction
+
+function! OpenAutoScript(name) abort
+    let autoloadDir = AutoloadDir()
+    let scriptPath = autoloadDir . '/' . a:name . '.vim'
+
+    execute 'edit ' . scriptPath
+endfunction
+
+
 " reload init.vim and all autoload configs
 nnoremap <silent> <Leader>vr :call ReloadAll()<cr>
-
 " edit init.vim
-nnoremap <silent> <Leader>ve :e $MYVIMRC<cr>
+nnoremap <silent> <Leader>vi :e $MYVIMRC<cr>
+" edit keys.vim
+nnoremap <silent> <Leader>vk :call OpenAutoScript('keys')<cr>
+" edit plugins.vim
+nnoremap <silent> <Leader>vp :call OpenAutoScript('plugins')<cr>
 
 let g:which_key_space.v = {
       \ 'name' : '+vim',
-      \ 'e' : 'edit init.vim',
+      \ 'i' : 'edit init.vim',
       \ 'r' : 'reload init.vim',
+      \ 'k' : 'edit keys.vim',
+      \ 'p' : 'edit plugins.vim',
       \ }
 
 "================== gotos ================================

@@ -1,4 +1,4 @@
-filetype off
+filetype indent on
 filetype plugin indent on
 
 for file in ['plugins', 'keys', 'filetree']
