@@ -10,8 +10,11 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'jeetsukumaran/vim-buffergator'
 
-" color scheme
+" color schemes
 Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'altercation/vim-colors-solarized'
+Plug 'rakr/vim-one'
 
 " fuzzy searcher
 Plug 'nvim-lua/plenary.nvim'

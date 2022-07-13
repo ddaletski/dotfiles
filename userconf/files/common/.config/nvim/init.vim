@@ -1,4 +1,4 @@
-filetype indent on
+filetype indent off
 filetype plugin indent on
 
 for file in ['plugins', 'keys', 'filetree']
@@ -7,8 +7,9 @@ for file in ['plugins', 'keys', 'filetree']
 endfor
 
 " Theme
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme onehalflight
+set background=light
+let g:airline_theme='onehalflight'
 let g:airline#extensions#tabline#enabled = 1
 let python_highlight_all=1
 
