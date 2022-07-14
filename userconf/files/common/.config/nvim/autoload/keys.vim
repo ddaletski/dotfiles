@@ -3,13 +3,16 @@ let g:maplocalleader = ','
 set timeoutlen=500
 
 " buffet
-nnoremap <silent> <Leader><Tab> :BuffergatorToggle<CR>
-noremap <silent> <Tab> :bn<CR>
-noremap <silent> <S-Tab> :bp<CR>
+nnoremap <silent> <Tab><Tab> :BuffergatorToggle<CR>
+noremap <silent> <Tab>n :bn<CR>
+noremap <silent> <Tab>p :bp<CR>
 noremap <silent> <C-t> :tabnew new-tab<CR>
 
 " telescope
 nnoremap ` :Telescope<CR>
+nnoremap <C-p> :lua require'telescope.builtin'
+            \.find_files(require('telescope.themes').get_dropdown({}))<CR>
+nnoremap <C-f> :lua require'telescope.builtin'.live_grep{}<CR>
 
 "================== completion ===========================
 function! s:check_back_space() abort
@@ -17,19 +20,22 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" use <tab> for trigger completion and navigate to the next complete item
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 
-" shift + <tab> to navigate to the previous complete item
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"" use <Tab> to trigger completion
+"inoremap <silent><expr> <Tab>
+            "\ pumvisible() ? "\<Tab>" : 
+            "\ <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+
+"" use <C-j> to go to the next complete item
+"inoremap <silent><expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+"" <C-k> to go to the previous complete item
+"imap <silent><expr> <C-k>
+            "\ pumvisible() ? "\<C-p>" :
+            "\ "\<C-k>"
+
+let g:coc_snippet_next = '<Tab>'
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
 inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "======================== other =========================
@@ -117,13 +123,23 @@ let g:which_key_space.e = {
 
 "==================== files ==============================
 "
-" toggle NERDTree
-nnoremap <silent> <Leader>ff :NERDTreeToggle<cr>
+:lua vim.api.nvim_set_keymap(
+            \   "n",
+            \   "<space>ff",
+            \   ":Telescope file_browser<CR>",
+            \   { noremap = true, silent = true }
+            \ )
 
 let g:which_key_space.f = {
       \ 'name' : '+files',
-      \ 'f' : 'toggle files tree'
+      \ 'f' : 'open files browser'
       \ }
+
+"==================== terminal ===========================
+"
+
+nnoremap <silent> <leader>t :FloatermToggle<CR>
+let g:which_key_space.t = 'terminal'
 
 "===================== vim ===============================
 
@@ -147,6 +163,11 @@ function! OpenAutoScript(name) abort
     execute 'edit ' . scriptPath
 endfunction
 
+function! OpenConfigDir() abort
+    let vimrc = $MYVIMRC
+    let vimDir = fnamemodify(vimrc, ':h')
+    execute 'edit '.vimDir
+endfunction
 
 " reload init.vim and all autoload configs
 nnoremap <silent> <Leader>vr :call ReloadAll()<cr>
@@ -156,13 +177,16 @@ nnoremap <silent> <Leader>vi :e $MYVIMRC<cr>
 nnoremap <silent> <Leader>vk :call OpenAutoScript('keys')<cr>
 " edit plugins.vim
 nnoremap <silent> <Leader>vp :call OpenAutoScript('plugins')<cr>
+" open config dir
+nnoremap <silent> <Leader>vd :call OpenConfigDir()<cr>
 
 let g:which_key_space.v = {
       \ 'name' : '+vim',
-      \ 'i' : 'edit init.vim',
       \ 'r' : 'reload init.vim',
+      \ 'i' : 'edit init.vim',
       \ 'k' : 'edit keys.vim',
       \ 'p' : 'edit plugins.vim',
+      \ 'd' : 'open nvim config dir',
       \ }
 
 "================== gotos ================================

@@ -1,8 +1,15 @@
 filetype indent off
 filetype plugin indent on
 
-for file in ['plugins', 'keys', 'filetree']
+" load vim config files
+for file in ['plugins', 'keys']
     let fpath = $HOME . '/.config/nvim/autoload/' . file . '.vim'
+    exe 'source' fpath
+endfor
+
+" load lua config files
+for file in ['telescope_init']
+    let fpath = $HOME . '/.config/nvim/lua/' . file .'.lua'
     exe 'source' fpath
 endfor
 
