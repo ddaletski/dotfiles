@@ -1,3 +1,8 @@
+" reset all keybindings
+" when init.vim is reloaded on the fly after keys.vim is changed
+" it will make sure old keybindings are removed
+:mapclear | mapclear <buffer> | mapclear! | mapclear! <buffer>
+
 filetype indent off
 filetype plugin indent on
 

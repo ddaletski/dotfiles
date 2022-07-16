@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'alvan/vim-closetag'
 Plug 'shougo/echodoc'
 Plug 'preservim/nerdcommenter'
@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'voldikss/vim-floaterm'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'tpope/vim-fugitive'
 
 " color schemes
 Plug 'morhetz/gruvbox'
