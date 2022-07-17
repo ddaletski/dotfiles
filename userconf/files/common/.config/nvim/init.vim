@@ -1,13 +1,7 @@
-" reset all keybindings
-" when init.vim is reloaded on the fly after keys.vim is changed
-" it will make sure old keybindings are removed
-:mapclear | mapclear <buffer> | mapclear! | mapclear! <buffer>
-
 filetype indent off
 filetype plugin indent on
-
 " load vim config files
-for file in ['plugins', 'keys']
+for file in ['plugins', 'themes', 'keys']
     let fpath = $HOME . '/.config/nvim/autoload/' . file . '.vim'
     exe 'source' fpath
 endfor
@@ -21,6 +15,8 @@ endfor
 " Theme
 colorscheme onehalflight
 set background=light
+" available options for themes switcher
+let g:themes_options = ['onehalfdark', 'onehalflight']
 let g:airline_theme='onehalflight'
 let g:airline#extensions#tabline#enabled = 1
 let python_highlight_all=1

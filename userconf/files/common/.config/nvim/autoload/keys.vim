@@ -177,13 +177,26 @@ nnoremap <silent> <Leader>vcd :call OpenConfigDir()<cr>
 "=== plugins
 
 " update plugins
-nnoremap <silent> <Leader>vpu :PlugUpdate<cr>
+function! UpdatePlugins() abort
+    PlugUpdate
+    CocUpdate
+endfunction
+nnoremap <silent> <Leader>vpu :call UpdatePlugins()<cr>
+
 " install plugins
-nnoremap <silent> <Leader>vpi :PlugInstall<cr>
+function! InstallPlugins() abort
+    PlugInstall
+    CocUpdateSync
+endfunction
+nnoremap <silent> <Leader>vpi :call InstallPlugins()<cr>
+
 " clean plugins
 nnoremap <silent> <Leader>vpc :PlugClean<cr>
 " edit plugins.vim
 nnoremap <silent> <Leader>vpe :call OpenAutoScript('plugins')<cr>
+
+" themes selector
+nnoremap <silent> <Leader>vt :call SelectTheme()<cr>
 
 let s:which_key_space.v = {
       \ 'name' : '+vim',
@@ -202,6 +215,7 @@ let s:which_key_space.v = {
           \ 'e' : 'edit plugins.vim',
           \ },
       \ 'r' : 'reload init.vim',
+      \ 't' : 'select theme',
       \ }
 
 "================== gotos ================================
