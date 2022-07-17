@@ -10,7 +10,7 @@ for file in ['plugins', 'themes', 'keys']
 endfor
 
 " load lua config files
-for file in ['telescope_init']
+for file in ['telescope_init', 'bufferline_init']
     let fpath = $HOME . '/.config/nvim/lua/' . file .'.lua'
     exe 'source' fpath
 endfor
@@ -18,8 +18,9 @@ endfor
 " Theme
 " available options for themes switcher
 let g:themes_options = ['onehalfdark|dark', 'onehalflight|light', 'gruvbox', 'onenord', 'one',]
-colorscheme onehalflight
-let g:airline_theme='onehalflight'
+colorscheme onehalfdark
+set background=dark
+let g:airline_theme='onehalfdark' " TODO: add hook to themes switcher
 let g:airline#extensions#tabline#enabled = 1
 let python_highlight_all=1
 

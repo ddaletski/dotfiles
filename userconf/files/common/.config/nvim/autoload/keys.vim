@@ -4,11 +4,16 @@ if !g:keys_popup_disabled
     set timeoutlen=500
 endif
 
-" buffet
+" buffergator
 nnoremap <silent> <Tab><Tab> :BuffergatorToggle<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
 nnoremap <silent> <C-t> :tabnew new-tab<cr>
+augroup buffergator
+    autocmd!
+    "autocmd BufEnter \[\[buffergator-buffers\]\] echom 'entered buffer ' . bufname(bufnr())
+    "autocmd BufEnter [buffergator-buffers] nnoremap <Esc> <buffer> :BuffergatorToggle<cr>
+augroup END
 
 " telescope
 nnoremap ` :Telescope<cr>
@@ -78,7 +83,7 @@ nnoremap <silent> <leader>ls  :<C-u>CocList -I symbols<cr>
 
 " format
 xnoremap <silent> <leader>lf  <Plug>(coc-format-selected)<cr>
-nnoremap <silent> <leader>lF  :<Plug>(coc-format)<cr>
+nnoremap <silent> <leader>lF  <Plug>(coc-format)<cr>
 
 " docs
 nnoremap <silent> K :call <SID>show_documentation()<cr>

@@ -149,17 +149,17 @@ endfunction
 " =============== private ==================
 
 function! s:winWidth(lines) abort
-    return 2 + max(map(a:lines, {idx, line -> len(line)}))
+    return 4 + max(map(a:lines, {idx, line -> len(line)}))
 endfunction
 
 function! s:addLeftAlignedText(buf, width, row, text) abort
-    let start_col = 3
+    let start_col = 4
     let end_col = start_col + len(a:text)
     call nvim_buf_set_text(a:buf, a:row, start_col, a:row, end_col, [a:text])
 endfunction
 
 function! s:addCenteredText(buf, width, row, text) abort
-    let start_col = 1 + (a:width - len(a:text))/2
+    let start_col = 2 + (a:width - len(a:text))/2
     let end_col = start_col + len(a:text)
     call nvim_buf_set_text(a:buf, a:row, start_col, a:row, end_col, [a:text])
 endfunction
