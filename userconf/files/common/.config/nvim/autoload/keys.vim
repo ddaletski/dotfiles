@@ -1,6 +1,8 @@
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
-set timeoutlen=500
+if !g:keys_popup_disabled
+    set timeoutlen=500
+endif
 
 " buffet
 nnoremap <silent> <Tab><Tab> :BuffergatorToggle<cr>
@@ -298,10 +300,12 @@ function! s:registerKeysPopup(top_key, keys_dict) abort
 endfunction
 
 " register keys descriptions
-nnoremap <silent> <leader> :WhichKey '<Space>'<cr>
-xnoremap <silent> <leader> :WhichKeyVisual '<Space>'<cr>
-call s:registerKeysPopup('<Space>', s:which_key_space)
+if !g:keys_popup_disabled
+    nnoremap <silent> <leader> :WhichKey '<Space>'<cr>
+    xnoremap <silent> <leader> :WhichKeyVisual '<Space>'<cr>
+    call s:registerKeysPopup('<Space>', s:which_key_space)
 
-nnoremap <silent> g :WhichKey 'g'<cr>
-call s:registerKeysPopup('g', s:which_key_g)
+    nnoremap <silent> g :WhichKey 'g'<cr>
+    call s:registerKeysPopup('g', s:which_key_g)
+endif
 "====================================================

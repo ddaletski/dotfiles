@@ -1,20 +1,56 @@
 " TODO: theme caching for user
 
+function! AvailableThemes() abort
+    let themes = []
+
+    for theme in g:themes_options
+        if count(theme, '|') > 0 " bg is specified
+            let [name, bg_tone] = split(theme, '|')
+
+            if bg_tone !=# 'light' && bg_tone !=# 'dark'
+                echoerr "unsupported bg tone " . bg_tone . " in color theme " . theme
+            endif
+
+            call add(themes, [name, bg_tone])
+        else " bg is not specified - add both
+            let name = theme
+
+            call add(themes, [name, 'light'])
+            call add(themes, [name, 'dark'])
+        endif
+    endfor
+
+    return themes
+endfunction
+
 function! SelectThemeByIndex(theme_idx) abort
-    if a:theme_idx < 0 || a:theme_idx >= len(g:themes_options)
-        echom "can't select the colorscheme #" . a:theme_idx 
-                    \ . ". Index is out of range [0, " . len(g:themes_options) . ")"
+    let available_themes = AvailableThemes()
+
+    if a:theme_idx < 0 || a:theme_idx >= len(available_themes)
+        echoerr "can't select the colorscheme #" . a:theme_idx 
+                    \ . ". Index is out of range [0, " . len(available_themes) . ")"
         return
     endif
-    exec 'colorscheme ' . g:themes_options[a:theme_idx]
+
+    let [scheme, bg_tone] = available_themes[a:theme_idx]
+    let &bg=bg_tone
+    exec 'colorscheme ' . scheme
 endfunction
 
 function! SelectTheme() abort
+    let available_themes = AvailableThemes()
+
+    function! s:format_item(theme_item) 
+        let [name, bg_tone] = a:theme_item
+        return name . ' ' . bg_tone
+    endfunction
+    let themes_labels = map(available_themes, {idx, item -> s:format_item(item)})
+
     let last_scheme = s:catchExOutput('colorscheme')
 
     let prompt = 'colorscheme'
-    let width = s:winWidth(g:themes_options + [prompt])
-    let s:height = 4 + len(g:themes_options)
+    let width = s:winWidth(themes_labels + [prompt])
+    let s:height = 4 + len(available_themes)
 
     " create or get a buffer
     if !bufexists(s:bufname)
@@ -26,16 +62,17 @@ function! SelectTheme() abort
     endif
     call nvim_buf_set_option(buf, 'modifiable', v:true)
 
-    let horizontal_border = '+' . repeat('-', width - 2) . '+'
-    let empty_line = '|' . repeat(' ', width - 2) . '|'
+    let top_border = "╔" . repeat("═", width - 2) . "╗"
+    let mid_border = "╟" . repeat("┄", width - 2) . "╢"
+    let empty_line = "║" . repeat(" ", width - 2) . "║"
+    let bot_border = "╚" . repeat("═", width - 2) . "╝"
 
-    " border - header - border - ...themes - border
     let lines = flatten([
-                \ horizontal_border, 
+                \ top_border, 
                 \ empty_line,
-                \ horizontal_border, 
-                \ repeat([empty_line], len(g:themes_options)), 
-                \ horizontal_border
+                \ mid_border, 
+                \ repeat([empty_line], len(available_themes)), 
+                \ bot_border
                 \ ])
     " set the box in the buffer
     call nvim_buf_set_lines(buf, 0, -1, v:false, lines)
@@ -45,8 +82,8 @@ function! SelectTheme() abort
 
     " print all themes
     let offset = 0
-    for theme in g:themes_options
-        call s:addCenteredText(buf, width, 3 + offset, theme)
+    for theme in themes_labels
+        call s:addLeftAlignedText(buf, width, 3 + offset, theme)
         let offset += 1
     endfor
 
@@ -62,7 +99,7 @@ function! SelectTheme() abort
                 \ {'silent': v:true, 'nowait': v:true, 'noremap': v:true})
 
     " autocommand for changed line number (theme)
-    function s:onLineIndexChanged(line_idx) abort
+    function! s:onLineIndexChanged(line_idx) abort
         let line_num = a:line_idx
         " force cursor in themes list
         if line_num < 3
@@ -110,12 +147,19 @@ function! SelectTheme() abort
 endfunction
 
 " =============== private ==================
+
 function! s:winWidth(lines) abort
     return 2 + max(map(a:lines, {idx, line -> len(line)}))
 endfunction
 
+function! s:addLeftAlignedText(buf, width, row, text) abort
+    let start_col = 3
+    let end_col = start_col + len(a:text)
+    call nvim_buf_set_text(a:buf, a:row, start_col, a:row, end_col, [a:text])
+endfunction
+
 function! s:addCenteredText(buf, width, row, text) abort
-    let start_col = (a:width - len(a:text))/2
+    let start_col = 1 + (a:width - len(a:text))/2
     let end_col = start_col + len(a:text)
     call nvim_buf_set_text(a:buf, a:row, start_col, a:row, end_col, [a:text])
 endfunction
@@ -127,8 +171,13 @@ function! s:catchExOutput(cmd) abort
 endfunction
 
 function! s:currentColorschemeIdx() abort
-    let current = s:catchExOutput('colorscheme')
-    return index(g:themes_options, current)
+    let available_themes = AvailableThemes()
+
+    let scheme = s:catchExOutput('colorscheme')
+    let bg_tone = &background
+
+    let current = [scheme, bg_tone]
+    return index(available_themes, current)
 endfunction
 
 let s:bufname = '__theme_select__'

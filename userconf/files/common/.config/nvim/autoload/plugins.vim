@@ -16,6 +16,7 @@ Plug 'morhetz/gruvbox'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
+Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 
 " telescope
 Plug 'nvim-lua/plenary.nvim' " fuzzy searcher used by telescope

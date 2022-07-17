@@ -1,5 +1,8 @@
 filetype indent off
 filetype plugin indent on
+
+let g:keys_popup_disabled = v:false
+
 " load vim config files
 for file in ['plugins', 'themes', 'keys']
     let fpath = $HOME . '/.config/nvim/autoload/' . file . '.vim'
@@ -13,10 +16,9 @@ for file in ['telescope_init']
 endfor
 
 " Theme
-colorscheme onehalflight
-set background=light
 " available options for themes switcher
-let g:themes_options = ['onehalfdark', 'onehalflight']
+let g:themes_options = ['onehalfdark|dark', 'onehalflight|light', 'gruvbox', 'onenord', 'one',]
+colorscheme onehalflight
 let g:airline_theme='onehalflight'
 let g:airline#extensions#tabline#enabled = 1
 let python_highlight_all=1
