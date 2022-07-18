@@ -1,17 +1,12 @@
 filetype indent off
+filetype plugin on
 filetype plugin indent on
-
-let g:keys_popup_disabled = v:false
+syntax on
+set nocompatible
 
 " load vim config files
 for file in ['plugins', 'themes', 'keys']
     let fpath = $HOME . '/.config/nvim/autoload/' . file . '.vim'
-    exe 'source' fpath
-endfor
-
-" load lua config files
-for file in ['telescope_init', 'bufferline_init']
-    let fpath = $HOME . '/.config/nvim/lua/' . file .'.lua'
     exe 'source' fpath
 endfor
 
@@ -28,7 +23,6 @@ let python_highlight_all=1
 set number
 set nu
 
-syntax enable
 set smartindent
 set expandtab
 set shiftwidth=4
