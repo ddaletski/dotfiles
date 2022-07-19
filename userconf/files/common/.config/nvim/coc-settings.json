@@ -31,5 +31,9 @@
     "suggest.noselect": false,
     "yaml.format.enable": true,
     "yaml.completion": true,
-    "colors.filetypes": ["*"]
+    "colors.filetypes": [
+      "*"
+    ],
+    "sumneko-lua.enableNvimLuaDev": true,
+    "Lua.telemetry.enable": true
 }

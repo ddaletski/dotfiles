@@ -8,10 +8,9 @@ Plug 'shougo/echodoc'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-fugitive'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vimwiki/vimwiki'
+Plug 'puremourning/vimspector'
 
 " color schemes
 Plug 'morhetz/gruvbox'
@@ -36,15 +35,13 @@ let g:coc_global_extensions = [
             \ 'coc-python',
             \ 'coc-rust-analyzer',
             \ 'coc-vimlsp',
-            \ 'coc-lua',
+            \ 'coc-sumneko-lua',
             \ 'coc-cmake',
             \ 'coc-json',
             \ 'coc-sh'
             \ ]
 
 let g:NERDCreateDefaultMappings = 0 "disable default keys for NERDCommenter
-let g:buffergator_suppress_keymaps = 1
-let g:buffergator_autoupdate = 1
 
 " load init files for plugins
 for file in ['telescope_init', 'bufferline_init', 'which_key_init']

@@ -2,22 +2,16 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 set timeoutlen=500
 
-" buffergator
-nnoremap <silent> <Tab><Tab> :BuffergatorToggle<cr>
+" buffers
+nnoremap <silent> <Tab><Tab> :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
 nnoremap <silent> <C-t> :tabnew new-tab<cr>
-augroup buffergator
-    autocmd!
-    "autocmd BufEnter \[\[buffergator-buffers\]\] echom 'entered buffer ' . bufname(bufnr())
-    "autocmd BufEnter [buffergator-buffers] nnoremap <Esc> <buffer> :BuffergatorToggle<cr>
-augroup END
 
 " telescope
 nnoremap ` :Telescope<cr>
-nnoremap <C-p> :lua require'telescope.builtin'
-            \.find_files(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <C-f> :lua require'telescope.builtin'.live_grep{}<cr>
+nnoremap <silent> <C-p> :Telescope find_files<cr>
+nnoremap <silent> <C-f> :Telescope live_grep<cr>
 
 "================== completion ===========================
 function! s:check_back_space() abort
