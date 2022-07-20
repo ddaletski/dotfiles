@@ -276,3 +276,100 @@ local n_only = {
 wk.register({g = n_only}, { mode = "n" })
 EOF
 
+"==================== vimspector =============================
+
+nmap <Leader>da :call vimspector#GetConfigurations()<cr>
+nmap <Leader>dl :call vimspector#Launch()<cr>
+nmap <Leader>dq :call vimspector#Reset()<cr>
+
+" for normal mode - the word under the cursor
+nmap <Leader>de <Plug>VimspectorBalloonEval<cr>
+" for visual mode, the visually selected text
+xmap <Leader>de <Plug>VimspectorBalloonEval<cr>
+
+
+"<Plug>VimspectorGoToCurrentLine
+nmap <silent> <Leader>dr <Plug>VimspectorRunToCursor<cr>
+nmap <silent> <Leader>dc <Plug>VimspectorContinue<cr>
+nmap <silent> <Leader>dS <Plug>VimspectorStop<cr>
+nmap <silent> <Leader>dR <Plug>VimpectorRestart<cr>
+nmap <silent> <Leader>dp <Plug>VimspectorPause<cr>
+
+nmap <silent> <Leader>dj <Plug>VimspectorStepOver<cr>
+nmap <silent> <Leader>dn <Plug>VimspectorStepOver<cr>
+nmap <silent> <Leader>di <Plug>VimspectorStepInto<cr>
+nmap <silent> <Leader>do <Plug>VimspectorStepOut<cr>
+
+nmap <silent> <Leader>dfk <Plug>VimspectorDownFrame<cr>
+nmap <silent> <Leader>dfu <Plug>VimspectorDownFrame<cr>
+nmap <silent> <Leader>dfp <Plug>VimspectorDownFrame<cr>
+
+nmap <silent> <Leader>dfj <Plug>VimspectorUpFrame<cr>
+nmap <silent> <Leader>dfd <Plug>VimspectorUpFrame<cr>
+nmap <silent> <Leader>dfn <Plug>VimspectorUpFrame<cr>
+
+nmap <silent> <Leader>db<Tab> <Plug>VimspectorBreakpoints<cr>
+nmap <silent> <Leader>dbb <Plug>VimspectorToggleBreakpoint<cr>
+nmap <silent> <Leader>dbc <Plug>VimspectorToggleConditionalBreakpoint<cr>
+nmap <silent> <Leader>dbf <Plug>VimspectorAddFunctionBreakpoint<cr>
+nmap <silent> <Leader>dbd :call vimspector#ClearBreakpoints()<cr>
+
+" TODO: add watch maps
+"vimspector#AddWatch(
+"vimspector#AddWatchPrompt(
+"vimspector#DeleteWatch()
+"vimspector#OmniFuncWatch(
+
+"vimspector#ExpandVariable()
+"vimspector#OmniFuncConsole(
+
+lua << EOF
+local wk = require("which-key")
+
+local n_only = {
+    name = "debug",
+    a = "show all configurations",
+    l = "launch",
+    q = "quit",
+    e = "evaluate expr under cursor",
+    r = "run to cursor",
+    c = "continue",
+    S = "stop",
+    R = "restart",
+    p = "pause",
+
+    j = "step over",
+    n = "step over",
+    i = "step into",
+    o = "step out",
+
+    f = {
+        name = "frame",
+        k = "go up one frame",
+        u = "go up one frame",
+        p = "go up one frame",
+        j = "go down one frame",
+        d = "go down one frame",
+        n = "go down one frame",
+    },
+    b = {
+        name = "breakpoints",
+        ["<Tab>"] = "show/hide breakpoints window",
+        b = "toggle breakpoint",
+        c = "toggle conditional breakpoint",
+        f = "add function breakpoint",
+        D = "clear all breakpoints",
+    },
+    w = {
+        name = "watch"
+    }
+}
+
+local v_only = {
+    name = "debug",
+    e = "evaluate selected expression",
+}
+
+wk.register({d = n_only}, { prefix = "<leader>", mode = "n" })
+wk.register({v = v_only}, { prefix = "<leader>", mode = "v" })
+EOF

@@ -73,6 +73,7 @@ require("telescope").setup {
     extensions = {
         file_browser = {
             theme = "ivy",
+            initial_mode = "normal",
             layout_config = {
                 preview_width = function(_, w, _)
                     return math.floor(w * 0.6)
