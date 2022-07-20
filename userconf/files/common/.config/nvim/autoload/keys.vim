@@ -6,7 +6,6 @@ set timeoutlen=500
 nnoremap <silent> <Tab><Tab> :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
-nnoremap <silent> <C-t> :tabnew new-tab<cr>
 
 " telescope
 nnoremap ` :Telescope<cr>
@@ -54,6 +53,10 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+nnoremap <silent> <C-c> :noh<cr>
+nnoremap <silent> <cr> :noh<cr><cr>
+
 
 "========================================================
 "================== keys helper =========================

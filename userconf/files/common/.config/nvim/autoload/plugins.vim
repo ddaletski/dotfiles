@@ -12,6 +12,7 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'vimwiki/vimwiki'
 Plug 'puremourning/vimspector'
 Plug 'tikhomirov/vim-glsl'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " color schemes
 Plug 'morhetz/gruvbox'
