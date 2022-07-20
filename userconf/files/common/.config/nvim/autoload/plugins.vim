@@ -11,6 +11,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'vimwiki/vimwiki'
 Plug 'puremourning/vimspector'
+Plug 'tikhomirov/vim-glsl'
 
 " color schemes
 Plug 'morhetz/gruvbox'
