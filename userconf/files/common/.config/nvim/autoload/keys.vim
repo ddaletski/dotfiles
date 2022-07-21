@@ -278,7 +278,7 @@ EOF
 
 "==================== vimspector =============================
 
-nmap <Leader>da :call vimspector#GetConfigurations()<cr>
+nmap <Leader>da :echo vimspector#GetConfigurations()<cr>
 nmap <Leader>dl :call vimspector#Launch()<cr>
 nmap <Leader>dq :call vimspector#Reset()<cr>
 
@@ -294,6 +294,10 @@ nmap <silent> <Leader>dc <Plug>VimspectorContinue<cr>
 nmap <silent> <Leader>dS <Plug>VimspectorStop<cr>
 nmap <silent> <Leader>dR <Plug>VimpectorRestart<cr>
 nmap <silent> <Leader>dp <Plug>VimspectorPause<cr>
+
+nmap <silent> <C-j> <Plug>VimspectorStepOver<cr>
+nmap <silent> <C-i> <Plug>VimspectorStepInto<cr>
+nmap <silent> <C-q> <Plug>VimspectorStepOut<cr>
 
 nmap <silent> <Leader>dj <Plug>VimspectorStepOver<cr>
 nmap <silent> <Leader>dn <Plug>VimspectorStepOver<cr>
