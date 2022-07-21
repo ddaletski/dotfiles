@@ -12,10 +12,12 @@ endfor
 
 " Theme
 " available options for themes switcher
-let g:themes_options = ['onehalfdark|dark', 'onehalflight|light', 'gruvbox', 'onenord', 'one',]
-colorscheme onehalfdark
+" use '<scheme>|dark'/'<scheme>|light' format if only one bg style is
+" needed. E.g. 'onehalfdark|dark'
+let g:themes_options = ['gruvbox', 'onenord', 'one']
+colorscheme one
 set background=dark
-let g:airline_theme='onehalfdark' " TODO: add hook to themes switcher
+let g:airline_theme='one' " TODO: add hook to themes switcher
 let g:airline#extensions#tabline#enabled = 1
 let python_highlight_all=1
 
@@ -65,3 +67,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set cmdheight=1
 set noshowmode
 let g:echodoc#enable_at_startup = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType h,hpp,cpp,cxx set keywordprg=cppman

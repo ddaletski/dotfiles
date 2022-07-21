@@ -175,31 +175,15 @@ fr2ru() {
 
 
 #########
-
-podatek_r() {
-    above_17=$(($1 > 85528 ? $1 - 85528 : 0))
-    below_17=$(($1 > 85528 ? 85528 : $1))
-
-    tax=$((int(below_17 * 0.17 + above_17 * 0.32)))
-    net=$((int($1 - tax)))
-
-    tax_usd=$((int($tax * 0.26)))
-    net_usd=$((int($net * 0.26)))
-
-    echo "$net PLN / $tax PLN : $net_usd$ / $tax_usd$"
-}
-
-podatek_m() {
-    above_17=$(($1 > 7250 ? $1 - 7250 : 0))
-    below_17=$(($1 > 7250 ? 7250 : $1))
-
-    tax=$((int(below_17 * 0.17 + above_17 * 0.32)))
-    net=$((int($1 - tax)))
-
-    tax_usd=$((int($tax * 0.26)))
-    net_usd=$((int($net * 0.26)))
-
-    echo "$net PLN / $tax PLN : $net_usd$ / $tax_usd$"
+#
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[45;93m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    command man "$@"
 }
 
 #########

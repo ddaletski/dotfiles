@@ -13,6 +13,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'puremourning/vimspector'
 Plug 'tikhomirov/vim-glsl'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'gauteh/vim-cppman'
 
 " color schemes
 Plug 'morhetz/gruvbox'

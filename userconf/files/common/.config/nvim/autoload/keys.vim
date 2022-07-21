@@ -10,8 +10,7 @@ nnoremap <silent> <Tab>p :bp<cr>
 " telescope
 nnoremap ` :Telescope<cr>
 nnoremap <silent> <C-p> :Telescope find_files<cr>
-nnoremap <silent> <C-f> :Telescope live_grep<cr>
-
+nnoremap <silent> <C-f> :Telescope current_buffer_fuzzy_find<cr>
 "================== completion ===========================
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -78,7 +77,53 @@ nnoremap <silent> <leader>lF  <Plug>(coc-format)<cr>
 
 " docs
 nnoremap <silent> K :call <SID>show_documentation()<cr>
-nnoremap <silent> <leader>lD :call <SID>show_documentation()<cr>
+
+function! ShowCppDocs()
+    " select the word under the cursor
+    execute 'normal! viw'
+
+    call ShowCppDocsSelection()
+endfunction
+
+function! ShowCppDocsSelection()
+    " copy the selection to #9 register 
+    execute 'normal! "9y'
+
+    " get the content of #9 register
+    let selection = @9
+
+    execute 'Cppman ' .. selection
+    execute 'normal! <cr>'
+endfunction
+
+function! s:register_cpp_docs() abort
+    nnoremap <silent> <buffer> <leader>lh :Cppman headers<cr>
+    nnoremap <silent> <buffer> <leader>lD :call ShowCppDocs()<cr>
+    xnoremap <silent> <buffer> <leader>lD :call ShowCppDocsSelection()<cr>
+
+lua << EOF
+    local wk = require("which-key")
+
+    local n_only = {
+        name = "language",
+        D = "show cpprefence under cursor",
+        h = "open cpprefence",
+    }
+    local v_only = {
+        name = "language",
+        D = "show cpprefence for selection",
+    }
+
+    wk.register({l = n_only}, { prefix = "<leader>", mode = "n", buffer=0 })
+    wk.register({l = v_only}, { prefix = "<leader>", mode = "v", buffer=0 })
+EOF
+endfunction
+    
+" register keymaps for showing cppreference
+augroup cppman
+  autocmd!
+  au Filetype cpp call s:register_cpp_docs()
+augroup END
 
 " rename current word
 nnoremap <leader>lr <Plug>(coc-rename)
@@ -89,7 +134,6 @@ local wk = require("which-key")
 local base = {
     name = "language",
     d = "diagnostics",
-    D = "show docs",
     o = "file outline",
     s = "symbols",
     r = "rename symbol",
@@ -135,14 +179,18 @@ EOF
 
 "==================== files ==============================
 "
-nnoremap <silent> <leader>ff :Telescope file_browser<cr>
+nnoremap <silent> <leader>f<Tab> :Telescope file_browser<cr>
+nnoremap <silent> <leader>ff :Telescope current_buffer_fuzzy_find<cr>
+nnoremap <silent> <leader>fF :Telescope live_grep<cr>
 
 lua << EOF
 local wk = require("which-key")
 
 local n_only = {
     name = "files",
-    f = "open files browser"
+    ["<Tab>"] = "open files browser",
+    f = "find in file",
+    F = "find in cwd"
 }
 
 wk.register({f = n_only}, { prefix = "<leader>", mode = "n" })
@@ -154,7 +202,7 @@ nnoremap <silent> <leader>t :FloatermToggle<cr>
 
 lua << EOF
 local wk = require("which-key")
-wk.register({t = 'terminal'})
+wk.register({t = "terminal"}, { prefix = "<leader>", mode = "n" })
 EOF
 
 "===================== vim ===============================
@@ -376,4 +424,44 @@ local v_only = {
 
 wk.register({d = n_only}, { prefix = "<leader>", mode = "n" })
 wk.register({v = v_only}, { prefix = "<leader>", mode = "v" })
+EOF
+
+"================ help ====================================
+
+nnoremap <silent> <leader>hk :WhichKey<cr>
+nnoremap <silent> <leader>hh :Telescope help_tags<cr>
+nnoremap <silent> <leader>hm :Telescope man_pages<cr>
+
+lua << EOF
+local wk = require("which-key")
+
+local n_only = {
+    name = "help",
+    k = "show all keymaps",
+    h = "list of help tags",
+    m = "list man pages",
+}
+
+
+wk.register({h = n_only}, { prefix = "<leader>", mode = "n" })
+EOF
+
+"============== git =======================================
+
+nnoremap <silent> <leader>gs :Telescope git_status<cr>
+nnoremap <silent> <leader>gl :Telescope git_commits<cr>
+nnoremap <silent> <leader>gb :Telescope git_branches<cr>
+
+lua << EOF
+local wk = require("which-key")
+
+local n_only = {
+    name = "git",
+    l = "log",
+    s = "status",
+    b = "branches",
+}
+
+
+wk.register({g = n_only}, { prefix = "<leader>", mode = "n" })
 EOF

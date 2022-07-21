@@ -34,9 +34,10 @@ require("telescope").setup {
     pickers = {
         buffers = {
             initial_mode = "normal",
+            preview_cutoff = 1,
             layout_config = {
                 vertical = {
-                    preview_height = 0,
+                    preview_height = 12,
                     width = function(_, max_cols, _)
                         return math.min(math.floor(max_cols * 0.9), 60)
                     end,
@@ -53,11 +54,20 @@ require("telescope").setup {
             }
         },
         live_grep = {
-            layout_config = {
-                vertical = {
-                    preview_height = 8
-                }
-            }
+        },
+        git_status = {
+            theme = "ivy",
+            initial_mode = "normal",
+        },
+        git_commits = {
+            theme = "ivy",
+            initial_mode = "normal",
+        },
+        git_branches = {
+            theme = "ivy",
+            initial_mode = "normal",
+        },
+        current_buffer_fuzzy_find = {
         },
         find_files = {
             hidden = "true",
