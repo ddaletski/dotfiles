@@ -25,8 +25,8 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ~/.local/sha
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.local/share/zsh/plugins/zsh-syntax-highlighting
 
 echo `colored blue installing some apps`
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo `colored blue installing resources`
 cp -r resources $HOME/.local/share/dotfiles-resources
@@ -35,7 +35,7 @@ echo `colored blue installing additional package managers`
 
 # nvm and nodejs
 echo `colored blue nvm`
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o - https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -45,7 +45,6 @@ nvm install --lts
 echo `colored blue rustup`
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
 bash /tmp/rustup.sh -y
-cargo install du-dust
 
 ##########################################################
 ############### symlink configs ##########################
@@ -67,3 +66,12 @@ mkdir -p $HOME/.config/systemd/user
         systemctl --user enable --now ngrok-ssh.service
     fi
 fi
+
+
+###########################################################
+############### resources #################################
+echo `colored blue installing resources`
+
+mkdir -p ~/.local/share/fonts/
+cp resources/fonts/* ~/.local/share/fonts
+fc-cache -f -v
