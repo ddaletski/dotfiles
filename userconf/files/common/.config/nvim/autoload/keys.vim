@@ -53,7 +53,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-nnoremap <silent> <C-c> :noh<cr>
 nnoremap <silent> <cr> :noh<cr><cr>
 
 

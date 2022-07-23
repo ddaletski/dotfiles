@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+" vim popup api support
+Plug 'kamykn/popup-menu.nvim'
+
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}

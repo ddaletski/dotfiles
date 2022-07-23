@@ -184,6 +184,29 @@ man() {
     command man "$@"
 }
 
+# gnome themes
+gnome_dark() {
+    gsettings set org.gnome.desktop.interface gtk-theme Matcha-dark-azul
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
+    BG_COLOR="'rgb(0x17, 0x14, 0x21)'"
+    FG_COLOR="'rgb(0xd0, 0xcf, 0xcc)'"
+
+    dconf write /com/github/amezin/ddterm/foreground-color $FG_COLOR
+    dconf write /com/github/amezin/ddterm/background-color $BG_COLOR
+}
+
+gnome_light() {
+    gsettings set org.gnome.desktop.interface gtk-theme Matcha-azul
+    gsettings set org.gnome.desktop.interface color-scheme prefer-light
+
+    BG_COLOR="'rgb(0xff, 0xff, 0xff)'"
+    FG_COLOR="'rgb(0x17, 0x14, 0x21)'"
+
+    dconf write /com/github/amezin/ddterm/foreground-color $FG_COLOR
+    dconf write /com/github/amezin/ddterm/background-color $BG_COLOR
+}
+
 #########
 # path
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
@@ -216,3 +239,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
