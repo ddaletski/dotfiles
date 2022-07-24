@@ -1,0 +1,136 @@
+[$Version]
+update_info=kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:animation-speed,kwin.upd:replace-scalein-with-scale,kwin.upd:auto-bordersize,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage
+
+[Compositing]
+GLCore=true
+GLTextureFilter=1
+OpenGLIsUnsafe=false
+
+[Desktops]
+Id_1=8adc9b0b-cfad-466b-8f68-99e1cca6adc3
+Id_2=5f6841ee-569e-4d2c-85bb-5aa0ce96d1ee
+Id_3=c74dac62-2665-4d7b-859e-a969a87d98c9
+Id_4=957d6972-2e09-4321-8e87-7a4d1c390bb0
+Name_2=New Desktop
+Name_3=New Desktop
+Name_4=New Desktop
+Number=4
+Rows=2
+
+[Effect-Cube]
+BorderActivate=9
+BorderActivateCylinder=9
+BorderActivateSphere=9
+
+[Effect-DesktopGrid]
+BorderActivate=9
+
+[Effect-PresentWindows]
+BorderActivateAll=9
+
+[Effect-Zoom]
+InitialZoom=1
+
+[ElectricBorders]
+Bottom=None
+BottomLeft=None
+BottomRight=None
+Left=None
+Right=None
+Top=None
+TopLeft=None
+TopRight=None
+
+[MouseBindings]
+CommandActiveTitlebar1=Raise
+CommandActiveTitlebar2=Start window tab drag
+CommandActiveTitlebar3=Operations menu
+CommandAll1=Move
+CommandAll2=Toggle raise and lower
+CommandAll3=Resize
+CommandAllWheel=Nothing
+CommandInactiveTitlebar1=Activate and raise
+CommandInactiveTitlebar2=Start window tab drag
+CommandInactiveTitlebar3=Operations menu
+CommandTitlebarWheel=Switch to Window Tab to the Left/Right
+CommandWindow1=Activate, raise and pass click
+CommandWindow2=Activate and pass click
+CommandWindow3=Activate and pass click
+CommandWindowWheel=Scroll
+
+[NightColor]
+Active=true
+LatitudeAuto=50.0529
+LongitudeAuto=19.9681
+NightTemperature=3100
+
+[Plugins]
+desktopchangeosdEnabled=false
+kwin4_effect_fadedesktopEnabled=false
+windowgeometryEnabled=false
+
+[Script-desktopchangeosd]
+PopupHideDelay=1000
+TextOnly=false
+
+[SubSession: 94f8f7dc-e975-48ca-af5a-304592b0d1e4]
+active=-1
+count=0
+
+[SubSession: ddf64293-17e6-4227-8dc9-e94b22cc61f4]
+active=-1
+count=0
+
+[SubSession: f6de952a-94a9-47d9-940b-bf1ca9fb7bea]
+active=-1
+count=0
+
+[TabBox]
+BorderActivate=9
+BorderAlternativeActivate=9
+DesktopLayout=org.kde.breeze.desktop
+DesktopListLayout=org.kde.breeze.desktop
+LayoutName=org.kde.breeze.desktop
+
+[Windows]
+ActiveMouseScreen=true
+AutoRaise=false
+AutoRaiseInterval=750
+AutogroupInForeground=true
+AutogroupSimilarWindows=false
+BorderSnapZone=10
+CenterSnapZone=0
+ClickRaise=true
+DelayFocusInterval=0
+ElectricBorderCooldown=350
+ElectricBorderCornerRatio=0.25
+ElectricBorderDelay=150
+ElectricBorderMaximize=true
+ElectricBorderTiling=true
+ElectricBorders=0
+FocusPolicy=FocusFollowsMouse
+FocusStealingPreventionLevel=1
+GeometryTip=false
+HideUtilityWindowsForInactive=true
+InactiveTabsSkipTaskbar=false
+MaximizeButtonLeftClickCommand=Maximize
+MaximizeButtonMiddleClickCommand=Maximize (vertical only)
+MaximizeButtonRightClickCommand=Maximize (horizontal only)
+NextFocusPrefersMouse=false
+Placement=Smart
+RollOverDesktops=true
+SeparateScreenFocus=false
+ShadeHover=false
+ShadeHoverInterval=250
+SnapOnlyWhenOverlapping=false
+TitlebarDoubleClickCommand=Maximize
+WindowSnapZone=10
+
+[org.kde.kdecoration2]
+BorderSize=Normal
+BorderSizeAuto=false
+ButtonsOnLeft=MS
+ButtonsOnRight=HIAX
+CloseOnDoubleClickOnMenu=false
+library=org.kde.breeze
+theme=Breeze

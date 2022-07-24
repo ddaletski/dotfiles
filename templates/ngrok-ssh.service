@@ -1,0 +1,10 @@
+[Unit]
+Description=Ngrok ssh tunnel
+
+[Service]
+ExecStart=$NGROK_EXEC tcp --region=eu 22
+WorkingDirectory=$HOME
+Restart=always
+
+[Install]
+WantedBy=default.target

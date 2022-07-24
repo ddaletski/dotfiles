@@ -1,0 +1,37 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "h",
+                "hpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls-cache"
+                }
+            }
+        },
+        "zig": {
+            "command": "zls",
+            "filetypes": [
+                "zig"
+            ]
+        }
+    },
+    "suggest.noselect": false,
+    "sumneko-lua.enableNvimLuaDev": true,
+    "Lua.telemetry.enable": false,
+    "colors.filetypes": [
+        "*"
+    ]
+}
