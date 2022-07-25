@@ -1,4 +1,4 @@
-#!bash
+#!/bin/bash
 
 case "$OSTYPE" in
   darwin*)  READLINK=greadlink ;; 
@@ -6,6 +6,7 @@ case "$OSTYPE" in
 esac
 
 colored() {
+    text_to_print="${@:2}"
     case $1 in 
         'red')
             color='1;31' ;;
@@ -19,5 +20,5 @@ colored() {
             color='1;35' ;;
     esac
 
-    echo -e "\033[${color}m${@:2}\033[m"
+    echo -e "\033[${color}m${text_to_print}\033[m"
 }

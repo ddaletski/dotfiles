@@ -1,4 +1,4 @@
-#!bash
+#!/bin/bash
 wget -O /tmp/gnome-shell-extension-installer "https://github.com/ddaletski/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x /tmp/gnome-shell-extension-installer
 mv /tmp/gnome-shell-extension-installer ~/.local/bin/
