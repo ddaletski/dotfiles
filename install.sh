@@ -47,6 +47,10 @@ echo `colored blue rustup`
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
 bash /tmp/rustup.sh -y
 
+# miniconda
+
+bash $SRC_DIR/scripts/install_conda.sh
+
 ##########################################################
 ############### symlink configs ##########################
 
