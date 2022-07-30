@@ -1,11 +1,11 @@
 function! GetWordUnderCursor() 
-    execute 'normal! viw9y'
+    execute 'normal! viw"9y'
     let selection = @9
     return selection
 endfunction
 
 function! GetSelectedText()
-    execute '9y'
+    execute '"9y'
     let selection = @9
     return selection
 endfunction

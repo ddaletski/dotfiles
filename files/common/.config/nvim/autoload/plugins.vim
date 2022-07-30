@@ -51,6 +51,7 @@ let g:coc_global_extensions = [
             \ ]
 
 let g:NERDCreateDefaultMappings = 0 "disable default keys for NERDCommenter
+let g:rust_doc#define_map_K = 0 " disable default keys for rust-doc
 
 " load init files for plugins
 for file in ['telescope_init', 'bufferline_init', 'which_key_init']
