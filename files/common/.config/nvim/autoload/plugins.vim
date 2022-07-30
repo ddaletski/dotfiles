@@ -18,6 +18,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'gauteh/vim-cppman'
 Plug 'rhysd/rust-doc.vim'
+Plug 'slint-ui/vim-slint'
 
 " color schemes
 Plug 'morhetz/gruvbox'
