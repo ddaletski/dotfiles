@@ -41,7 +41,8 @@ dconf write /com/github/amezin/ddterm/panel-icon-type "'toggle-button'"
 dconf write /com/github/amezin/ddterm/pointer-autohide true
 dconf write /com/github/amezin/ddterm/show-animation "'ease-out-cubic'"
 dconf write /com/github/amezin/ddterm/show-animation-duration 0.07
+dconf write /com/github/amezin/ddterm/tab-policy "'never'"
 dconf write /com/github/amezin/ddterm/use-theme-colors false
+dconf write /com/github/amezin/ddterm/window-resizable false
 dconf write /com/github/amezin/ddterm/window-size 1.0
-
 
