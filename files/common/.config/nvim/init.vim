@@ -69,4 +69,8 @@ set noshowmode
 let g:echodoc#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" cppreference
 autocmd FileType h,hpp,cpp,cxx set keywordprg=cppman
+
+let g:vimwiki_list = [{'path': '~/.vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]

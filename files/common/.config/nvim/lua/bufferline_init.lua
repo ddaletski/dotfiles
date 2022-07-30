@@ -8,21 +8,13 @@ require('bufferline').setup {
             local errors = diagnostics_dict["error"] or 0
             local warnings = (diagnostics_dict["warning"] or 0) + (diagnostics_dict["hint"] or 0)
 
-            if errors + warnings == 0 then
+            if errors > 0 then
+                return "❌"
+            elseif warnings > 0 then
+                return "⚠️ "
+            else
                 return ""
             end
-
-            local indicator = " "
-
-            if errors > 0 then
-                indicator = indicator .. "❌" .. errors
-            end
-
-            if warnings > 0 then
-                indicator = indicator .. "⚠️" .. warnings
-            end
-
-            return indicator
         end,
 
         custom_filter = function(buf_number, _)

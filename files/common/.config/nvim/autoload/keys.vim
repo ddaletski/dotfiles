@@ -2,6 +2,8 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 set timeoutlen=500
 
+inoremap <C-c> <Esc>`^
+
 " buffers
 nnoremap <silent> <Tab><Tab> :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
