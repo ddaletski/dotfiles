@@ -26,6 +26,12 @@
             "filetypes": [
                 "zig"
             ]
+        },
+        "slint": {
+            "filetypes": [
+                "slint"
+            ],
+            "command": "slint-lsp"
         }
     },
     "suggest.noselect": false,

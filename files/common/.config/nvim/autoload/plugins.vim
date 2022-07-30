@@ -21,6 +21,8 @@ Plug 'puremourning/vimspector'
 Plug 'tikhomirov/vim-glsl'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'gauteh/vim-cppman'
+Plug 'rhysd/rust-doc.vim'
+Plug 'slint-ui/vim-slint'
 
 " color schemes
 Plug 'morhetz/gruvbox'
@@ -48,10 +50,12 @@ let g:coc_global_extensions = [
             \ 'coc-sumneko-lua',
             \ 'coc-cmake',
             \ 'coc-json',
-            \ 'coc-sh'
+            \ 'coc-sh',
+            \ 'coc-markdownlint'
             \ ]
 
 let g:NERDCreateDefaultMappings = 0 "disable default keys for NERDCommenter
+let g:rust_doc#define_map_K = 0 " disable default keys for rust-doc
 
 " load init files for plugins
 for file in ['telescope_init', 'bufferline_init', 'which_key_init']

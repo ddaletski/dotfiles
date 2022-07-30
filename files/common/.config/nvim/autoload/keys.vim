@@ -41,6 +41,9 @@ inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<
 " escape in terminal
 tnoremap <Esc> <C-\><C-n>
 
+" clean selection by <cr>
+nnoremap <silent> <cr> :noh<cr><cr>
+
 " 'Ctrl'+'/' comments
 let g:NERDToggleCheckAllLines = 1
 nnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<cr>
@@ -54,9 +57,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-nnoremap <silent> <cr> :noh<cr><cr>
-
 
 "========================================================
 "================== keys helper =========================
@@ -78,53 +78,6 @@ nnoremap <silent> <leader>lF  <Plug>(coc-format)<cr>
 
 " docs
 nnoremap <silent> K :call <SID>show_documentation()<cr>
-
-function! ShowCppDocs()
-    " select the word under the cursor
-    execute 'normal! viw'
-
-    call ShowCppDocsSelection()
-endfunction
-
-function! ShowCppDocsSelection()
-    " copy the selection to #9 register 
-    execute 'normal! "9y'
-
-    " get the content of #9 register
-    let selection = @9
-
-    execute 'Cppman ' .. selection
-    execute 'normal! <cr>'
-endfunction
-
-function! s:register_cpp_docs() abort
-    nnoremap <silent> <buffer> <leader>lh :Cppman headers<cr>
-    nnoremap <silent> <buffer> <leader>lD :call ShowCppDocs()<cr>
-    xnoremap <silent> <buffer> <leader>lD :call ShowCppDocsSelection()<cr>
-
-lua << EOF
-    local wk = require("which-key")
-
-    local n_only = {
-        name = "language",
-        D = "show cpprefence under cursor",
-        h = "open cpprefence",
-    }
-    local v_only = {
-        name = "language",
-        D = "show cpprefence for selection",
-    }
-
-    wk.register({l = n_only}, { prefix = "<leader>", mode = "n", buffer=0 })
-    wk.register({l = v_only}, { prefix = "<leader>", mode = "v", buffer=0 })
-EOF
-endfunction
-    
-" register keymaps for showing cppreference
-augroup cppman
-  autocmd!
-  au Filetype cpp call s:register_cpp_docs()
-augroup END
 
 " rename current word
 nnoremap <leader>lr <Plug>(coc-rename)
@@ -156,6 +109,9 @@ wk.register({l = n_only}, { prefix = "<leader>", mode = "n" })
 wk.register({l = base}, { prefix = "<leader>", mode = "v" })
 wk.register({l = v_only}, { prefix = "<leader>", mode = "v" })
 EOF
+
+let docs_config_path = $HOME . '/.config/nvim/autoload/keys_docs.vim'
+exe 'source' docs_config_path
 
 "==================== errors =============================
 
