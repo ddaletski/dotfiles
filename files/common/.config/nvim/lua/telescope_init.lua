@@ -70,7 +70,7 @@ require("telescope").setup {
         current_buffer_fuzzy_find = {
         },
         find_files = {
-            hidden = "true",
+            hidden = false,
             layout_config = {
                 vertical = {
                     width = function(_, max_cols, _)

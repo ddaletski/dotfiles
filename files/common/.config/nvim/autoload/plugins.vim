@@ -47,7 +47,8 @@ let g:coc_global_extensions = [
             \ 'coc-cmake',
             \ 'coc-json',
             \ 'coc-sh',
-            \ 'coc-markdownlint'
+            \ 'coc-markdownlint',
+            \ 'coc-toml'
             \ ]
 
 let g:NERDCreateDefaultMappings = 0 "disable default keys for NERDCommenter
