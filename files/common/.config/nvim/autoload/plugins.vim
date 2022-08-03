@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'kamykn/popup-menu.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'alvan/vim-closetag'
 Plug 'shougo/echodoc'
@@ -40,7 +40,7 @@ call plug#end()
 " coc extensions
 let g:coc_global_extensions = [
             \ 'coc-highlight',
-            \ 'coc-python',
+            \ 'coc-pyright',
             \ 'coc-rust-analyzer',
             \ 'coc-vimlsp',
             \ 'coc-sumneko-lua',

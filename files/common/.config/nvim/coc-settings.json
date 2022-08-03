@@ -37,6 +37,8 @@
     "suggest.noselect": false,
     "sumneko-lua.enableNvimLuaDev": true,
     "Lua.telemetry.enable": false,
+    "python.analysis.useLibraryCodeForTypes": false,
+    "hover.target": "float",
     "colors.filetypes": [
         "*"
     ]

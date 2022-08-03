@@ -39,7 +39,7 @@ require("telescope").setup {
                 vertical = {
                     preview_height = 12,
                     width = function(_, max_cols, _)
-                        return math.min(math.floor(max_cols * 0.9), 60)
+                        return math.min(math.floor(max_cols * 0.9), 120)
                     end,
                 },
             },

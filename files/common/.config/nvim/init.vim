@@ -37,6 +37,7 @@ set completeopt=noinsert,menuone,noselect
 set foldmethod=indent
 set foldlevel=99
 set colorcolumn=100
+set signcolumn=yes
 
 " live substitution
 :set inccommand=split

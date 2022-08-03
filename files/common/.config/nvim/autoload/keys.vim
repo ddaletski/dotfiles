@@ -12,28 +12,28 @@ nnoremap ` :Telescope<cr>
 nnoremap <silent> <C-p> :Telescope find_files<cr>
 nnoremap <silent> <C-f> :Telescope current_buffer_fuzzy_find<cr>
 "================== completion ===========================
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-"" use <Tab> to trigger completion
-"inoremap <silent><expr> <Tab>
-            "\ pumvisible() ? "\<Tab>" : 
-            "\ <SID>check_back_space() ? "\<Tab>" : coc#refresh()
-
-"" use <C-j> to go to the next complete item
-"inoremap <silent><expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-"" <C-k> to go to the previous complete item
-"imap <silent><expr> <C-k>
-            "\ pumvisible() ? "\<C-p>" :
-            "\ "\<C-k>"
+""" use <C-j> to go to the next complete item
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+""" <C-k> to go to the previous complete item
+imap <silent><expr> <C-k>
+            \ coc#pum#visible() ? coc#pum#prev(1) :
+            \ "\<C-k>"
 
 let g:coc_snippet_next = '<Tab>'
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "======================== other =========================
 " escape in terminal
