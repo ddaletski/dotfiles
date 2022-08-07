@@ -3,7 +3,7 @@ let g:maplocalleader = ','
 set timeoutlen=500
 
 " buffers
-nnoremap <silent> <Tab><Tab> :Telescope buffers<cr>
+nnoremap <silent> <Tab>l :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
 

@@ -53,6 +53,9 @@ require("telescope").setup {
                 }
             }
         },
+        colorscheme = {
+            enable_preview = true
+        },
         live_grep = {
         },
         git_status = {

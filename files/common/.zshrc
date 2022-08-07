@@ -241,3 +241,13 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+
+#########
+# homebrew completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi

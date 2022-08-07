@@ -21,11 +21,11 @@ Plug 'rhysd/rust-doc.vim'
 Plug 'slint-ui/vim-slint'
 
 " color schemes
-Plug 'morhetz/gruvbox'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'altercation/vim-colors-solarized'
-Plug 'rakr/vim-one'
-Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+Plug 'noahfrederick/vim-hemisu'
+Plug 'preservim/vim-colors-pencil'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'humanoid-colors/vim-humanoid-colorscheme'
+
 
 " telescope
 Plug 'nvim-lua/plenary.nvim' " fuzzy searcher used by telescope
