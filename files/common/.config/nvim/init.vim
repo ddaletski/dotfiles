@@ -14,7 +14,7 @@ endfor
 " available options for themes switcher
 " use '<scheme>|dark'/'<scheme>|light' format if only one bg style is
 " needed. E.g. 'onehalfdark|dark'
-let g:themes_options = ['hemisu|light', 'one', 'pencil', 'solarized8_high|light', 'materialbox|dark']
+let g:themes_options = ['hemisu|light', 'materialbox|dark', 'one', 'pencil', 'solarized8_high|light']
 colorscheme hemisu
 set background=light
 let g:airline_theme='one' " TODO: add hook to themes switcher
