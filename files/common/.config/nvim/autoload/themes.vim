@@ -47,6 +47,7 @@ function! SelectTheme() abort
     let themes_labels = map(available_themes, {idx, item -> s:format_item(item)})
 
     let last_scheme = s:catchExOutput('colorscheme')
+    let last_bg = &background
 
     let prompt = 'colorscheme'
     let width = s:winWidth(themes_labels + [prompt])
@@ -90,8 +91,11 @@ function! SelectTheme() abort
     " Set mappings in the buffer to close the window easily 
     " and return the previous scheme
     let closingKeys = ['<Esc>', 'q', '<Leader>', '<C-w>', '<Tab>']
+
+    let close_cmd = ':colorscheme '..last_scheme..' | set background='..last_bg..' | :q<cr>'
+    echom close_cmd
     for closingKey in closingKeys
-        call nvim_buf_set_keymap(buf, 'n', closingKey, ':colorscheme ' . last_scheme . ' | q<cr>',
+        call nvim_buf_set_keymap(buf, 'n', closingKey, close_cmd,
                     \ {'silent': v:true, 'nowait': v:true, 'noremap': v:true})
     endfor
 
