@@ -1,4 +1,8 @@
-" TODO: theme caching for user
+function! SystemDarkMode() abort
+    let cmd = "osascript -e 'tell app \"System Events\" to tell appearance preferences to get the dark mode'"
+    let is_dark_mode = system(cmd) =~ 'true.*'
+    return is_dark_mode
+endfunction
 
 function! AvailableThemes() abort
     let themes = []

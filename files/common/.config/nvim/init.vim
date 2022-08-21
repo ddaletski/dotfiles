@@ -15,8 +15,14 @@ endfor
 " use '<scheme>|dark'/'<scheme>|light' format if only one bg style is
 " needed. E.g. 'onehalfdark|dark'
 let g:themes_options = ['hemisu|light', 'materialbox|dark', 'one', 'pencil', 'solarized8_high|light']
-colorscheme hemisu
-set background=light
+if SystemDarkMode()
+    colorscheme materialbox
+    set background=dark
+else
+    colorscheme hemisu
+    set background=light
+endif
+
 let g:airline_theme='one' " TODO: add hook to themes switcher
 let g:airline#extensions#tabline#enabled = 1
 let python_highlight_all=1
