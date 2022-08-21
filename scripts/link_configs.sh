@@ -9,6 +9,8 @@ link_recursively() {
 # $2 dest dir
 # $3 current file or dir
 
+    set -f; IFS=$'\n'
+
     path=$($READLINK -f $3)
 
     if [ -d $path ] ; then
@@ -25,6 +27,8 @@ link_recursively() {
         echo "$path -> $dest_file"
         ln -sf $path $dest_file
     fi
+
+    set +f; unset IFS
 }
 
 
