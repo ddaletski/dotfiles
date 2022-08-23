@@ -1,9 +1,15 @@
 # dotfiles
+My configuration files
+
+## How it works
+* all filetrees under `files/...` are symlinked recursively
+* additional software is installed automatically
 
 ## Distribution contains configs for:
 * neovim
 * tmux
 * zsh
+* iterm2
 * i3 desktop:
   * i3 config
   * i3status bar with fancy icons
