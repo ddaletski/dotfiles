@@ -41,8 +41,8 @@ set smartcase
 set completeopt=noinsert,menuone,noselect
 
 set foldmethod=indent
-set foldlevel=99
-set colorcolumn=100
+set foldlevel=119
+set colorcolumn=120
 set signcolumn=yes
 
 " live substitution
