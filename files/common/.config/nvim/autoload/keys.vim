@@ -324,7 +324,7 @@ nmap <silent> <Leader>db<Tab> <Plug>VimspectorBreakpoints<cr>
 nmap <silent> <Leader>dbb <Plug>VimspectorToggleBreakpoint<cr>
 nmap <silent> <Leader>dbc <Plug>VimspectorToggleConditionalBreakpoint<cr>
 nmap <silent> <Leader>dbf <Plug>VimspectorAddFunctionBreakpoint<cr>
-nmap <silent> <Leader>dbd :call vimspector#ClearBreakpoints()<cr>
+nmap <silent> <Leader>dbD :call vimspector#ClearBreakpoints()<cr>
 
 " TODO: add watch maps
 "vimspector#AddWatch(
