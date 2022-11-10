@@ -80,6 +80,10 @@ nnoremap <silent> K :call <SID>show_documentation()<cr>
 " rename current word
 nnoremap <leader>lr <Plug>(coc-rename)
 
+" quickfix
+nnoremap <silent> <leader>lq <Plug>(coc-codeaction-line)<cr>
+xnoremap <silent> <leader>lq <Plug>(coc-codeaction-selected)<cr>
+
 lua << EOF
 local wk = require("which-key")
 
@@ -89,6 +93,7 @@ local base = {
     o = "file outline",
     s = "symbols",
     r = "rename symbol",
+    q = "quickfix"
 }
 
 local n_only = {

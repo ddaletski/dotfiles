@@ -251,3 +251,4 @@ then
   autoload -Uz compinit
   compinit
 fi
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
