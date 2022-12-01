@@ -41,5 +41,6 @@
     "hover.target": "float",
     "colors.filetypes": [
         "*"
-    ]
+    ],
+    "rust-analyzer.procMacro.attributes.enable": true
 }
