@@ -286,6 +286,28 @@ local n_only = {
 wk.register({g = n_only}, { mode = "n" })
 EOF
 
+"=================== hop ================================
+
+nnoremap <silent> fw :HopWord<cr>
+nnoremap <silent> fc :HopChar1<cr>
+nnoremap <silent> fb :HopChar2<cr>
+nnoremap <silent> fl :HopLineStart<cr>
+nnoremap <silent> fp :HopPattern<cr>
+
+lua << EOF
+local wk = require("which-key")
+
+local n_only = {
+      name = "find",
+      w = "word",
+      f = "character",
+      b = "bi-character",
+      l = "line",
+      p = "pattern",
+}
+wk.register({f = n_only}, { mode = "n" })
+EOF
+
 "==================== vimspector =============================
 
 nmap <Leader>da :echo vimspector#GetConfigurations()<cr>
