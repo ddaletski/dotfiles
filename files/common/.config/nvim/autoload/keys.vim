@@ -289,7 +289,7 @@ EOF
 "=================== hop ================================
 
 nnoremap <silent> fw :HopWord<cr>
-nnoremap <silent> fc :HopChar1<cr>
+nnoremap <silent> ff :HopChar1<cr>
 nnoremap <silent> fb :HopChar2<cr>
 nnoremap <silent> fl :HopLineStart<cr>
 nnoremap <silent> fp :HopPattern<cr>

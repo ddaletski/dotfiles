@@ -68,6 +68,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+" Add underline for mutable variables
+hi link CocSemMutable CocUnderline
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " echodoc
 
@@ -76,4 +79,10 @@ set noshowmode
 let g:echodoc#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" Hop
+
+hi HopNextKey1 guifg=#ffb402
+hi HopNextKey2 guifg=#b98302
+
+
 autocmd FileType h,hpp,cpp,cxx set keywordprg=cppman

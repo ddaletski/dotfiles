@@ -34,13 +34,13 @@
             "command": "slint-lsp"
         }
     },
+    "semanticTokens.enable": true,
     "suggest.noselect": false,
     "sumneko-lua.enableNvimLuaDev": true,
     "Lua.telemetry.enable": false,
     "python.analysis.useLibraryCodeForTypes": false,
     "hover.target": "float",
-    "colors.filetypes": [
-        "*"
-    ],
-    "rust-analyzer.procMacro.attributes.enable": true
+    "colors.enable": true,
+    "rust-analyzer.procMacro.attributes.enable": true,
+    "svelte.enable-ts-plugin": true
 }
