@@ -220,6 +220,9 @@ nnoremap <silent> <Leader>vpe :call OpenAutoScript('plugins')<cr>
 "=== themes selector
 nnoremap <silent> <Leader>vt :call SelectTheme()<cr>
 
+"=== show startup screen
+nnoremap <silent> <Leader>vs :Alpha<cr>
+
 lua << EOF
 local wk = require("which-key")
 
@@ -241,6 +244,7 @@ local n_only = {
     },
     r = "reload init.vim",
     t = "select theme",
+    s = "startup screen",
 }
 wk.register({v = n_only}, { prefix = "<leader>", mode = "n" })
 EOF
