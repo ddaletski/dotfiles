@@ -68,9 +68,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Add underline for mutable variables
-hi link CocSemMutable CocUnderline
-
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " echodoc
 

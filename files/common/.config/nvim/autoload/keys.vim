@@ -6,6 +6,7 @@ set timeoutlen=500
 nnoremap <silent> <Tab>l :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
+nnoremap <silent> <Tab><Tab> :NvimTreeFocus<cr>
 
 " telescope
 nnoremap ` :Telescope<cr>
@@ -139,7 +140,6 @@ EOF
 
 "==================== files ==============================
 "
-nnoremap <silent> <leader>f<Tab> :Telescope file_browser<cr>
 nnoremap <silent> <leader>ff :Telescope current_buffer_fuzzy_find<cr>
 nnoremap <silent> <leader>fF :Telescope live_grep<cr>
 nnoremap <silent> <leader>fr :CocCommand workspace.renameCurrentFile<cr>
@@ -149,7 +149,6 @@ local wk = require("which-key")
 
 local n_only = {
     name = "files",
-    ["<Tab>"] = "open files browser",
     f = "find in file",
     F = "find in cwd",
     r = "rename current file",

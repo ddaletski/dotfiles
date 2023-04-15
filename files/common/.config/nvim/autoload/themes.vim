@@ -1,3 +1,9 @@
+" Add underline for mutable variables
+augroup semantic_highlights
+    autocmd!
+    autocmd ColorScheme * hi link CocSemMutable CocUnderline
+augroup END
+
 function! SystemDarkMode() abort
     let cmd = "osascript -e 'tell app \"System Events\" to tell appearance preferences to get the dark mode'"
     let is_dark_mode = system(cmd) =~ 'true.*'
@@ -97,7 +103,6 @@ function! SelectTheme() abort
     let closingKeys = ['<Esc>', 'q', '<Leader>', '<C-w>', '<Tab>']
 
     let close_cmd = ':colorscheme '..last_scheme..' | set background='..last_bg..' | :q<cr>'
-    echom close_cmd
     for closingKey in closingKeys
         call nvim_buf_set_keymap(buf, 'n', closingKey, close_cmd,
                     \ {'silent': v:true, 'nowait': v:true, 'noremap': v:true})
