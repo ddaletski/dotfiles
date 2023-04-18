@@ -191,7 +191,8 @@ endfunction
 function! OpenConfigDir() abort
     let vimrc = $MYVIMRC
     let vimDir = fnamemodify(vimrc, ':h')
-    execute 'edit '.vimDir
+    exe 'cd ' . vimDir
+    lua require 'telescope'.extensions.file_browser.file_browser()
 endfunction
 
 " reload init.vim and all autoload configs
