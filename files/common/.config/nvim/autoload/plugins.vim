@@ -24,6 +24,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'goolord/alpha-nvim'
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'github/copilot.vim'
 
 " color schemes
 Plug 'noahfrederick/vim-hemisu'
