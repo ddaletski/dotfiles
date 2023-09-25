@@ -25,6 +25,7 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'goolord/alpha-nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'github/copilot.vim'
+Plug 'saecki/crates.nvim'
 
 " color schemes
 Plug 'noahfrederick/vim-hemisu'
@@ -59,7 +60,8 @@ let g:coc_global_extensions = [
             \ 'coc-markdownlint',
             \ 'coc-toml',
             \ 'coc-html',
-            \ 'coc-tslint',
+            \ 'coc-tsserver',
+            \ 'coc-tslint-plugin',
             \ 'coc-svelte',
             \ ]
 
@@ -69,7 +71,7 @@ let g:rust_doc#define_map_K = 0 " disable default keys for rust-doc
 lua require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
 
 " load init files for plugins
-for file in ['telescope_init', 'bufferline_init', 'which_key_init', 'startup_theme', 'nvim_tree_init']
+for file in ['telescope_init', 'bufferline_init', 'which_key_init', 'startup_theme', 'nvim_tree_init', 'crates_init']
     let fpath = $HOME . '/.config/nvim/lua/' . file .'.lua'
     exe 'source' fpath
 endfor
