@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 #
 # ~/.bashrc
 #
@@ -154,3 +156,6 @@ source "$HOME/.cargo/env"
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d /home/linuxbrew/.linuxbrew/bin ] && export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 [ -d /opt/homebrew/bin ] && export PATH=$PATH:/opt/homebrew/bin
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
