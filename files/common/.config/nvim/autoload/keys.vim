@@ -127,6 +127,7 @@ nnoremap <silent> <leader>ek <Plug>(coc-diagnostic-prev)
 nnoremap <silent> <leader>ep <Plug>(coc-diagnostic-prev)
 nnoremap <silent> <leader>ej <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>en <Plug>(coc-diagnostic-next)
+nnoremap <silent> <leader>el :CocList diagnostics<CR>
 
 lua << EOF
 local wk = require("which-key")
@@ -136,7 +137,8 @@ local n_only = {
     j = "next error",
     n = "next error",
     k = "prev error",
-    p = "prev error"
+    p = "prev error",
+    l = "list errors in project",
 }
 wk.register({e = n_only}, { prefix = "<leader>", mode = "n" })
 EOF
