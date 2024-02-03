@@ -67,6 +67,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+let g:neovide_scroll_animation_length = 0.3
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " echodoc
@@ -83,3 +84,14 @@ hi HopNextKey2 guifg=#b98302
 
 
 autocmd FileType h,hpp,cpp,cxx set keywordprg=cppman
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neovide
+
+if exists("g:neovide")
+let g:neovide_theme = 'auto'
+let g:neovide_cursor_animation_length = 0.03
+let g:neovide_input_macos_alt_is_meta = v:false
+let g:neovide_scale_factor = 1.4
+let g:neovide_scroll_animation_length = 0.1
+endif
