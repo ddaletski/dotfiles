@@ -27,7 +27,7 @@ local function icon(fn)
     return nwd.get_icon(fn, ext, { default = true })
 end
 
-local function file_button(fn, sc, short_fn,autocd)
+local function file_button(fn, sc, short_fn, autocd)
     short_fn = short_fn or fn
     local ico_txt
     local fb_hl = {}
@@ -48,7 +48,7 @@ local function file_button(fn, sc, short_fn,autocd)
         ico_txt = ""
     end
     local cd_cmd = (autocd and " | cd %:p:h" or "")
-    local file_button_el = dashboard.button(sc, ico_txt .. short_fn, "<cmd>e " .. fn .. cd_cmd .." <CR>")
+    local file_button_el = dashboard.button(sc, ico_txt .. short_fn, "<cmd>e " .. fn .. cd_cmd .. " <CR>")
     local fn_start = short_fn:match(".*[/\\]")
     if fn_start ~= nil then
         table.insert(fb_hl, { "Comment", #ico_txt - 2, #fn_start + #ico_txt })
@@ -109,7 +109,7 @@ local function mru(start, cwd, items_number, opts)
 
         local shortcut = tostring(i + start - 1)
 
-        local file_button_el = file_button(fn, shortcut, short_fn,opts.autocd)
+        local file_button_el = file_button(fn, shortcut, short_fn, opts.autocd)
         tbl[i] = file_button_el
     end
     return {
@@ -162,7 +162,7 @@ local section_mru = {
 local buttons = {
     type = "group",
     val = {
-        { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+        { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
         dashboard.button("n", "  New file", "<cmd>ene<cr>"),
         dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
@@ -189,10 +189,28 @@ local config = {
             vim.api.nvim_create_autocmd('DirChanged', {
                 pattern = '*',
                 group = "alpha_temp",
-                callback = function () require('alpha').redraw() end,
+                callback = function() require('alpha').redraw() end,
             })
         end,
     },
 }
 
 require('alpha').setup(config)
+
+--vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })
+--vim.api.nvim_create_autocmd("BufDelete", {
+    --pattern = "*",
+    --group = "alpha_on_empty",
+    --callback = function(_)
+        --for _, buf_hndl in ipairs(vim.api.nvim_list_bufs()) do
+            --local open_buffs = 0
+            --if vim.api.nvim_buf_is_loaded(buf_hndl) then
+                --open_buffs = open_buffs + 1
+            --end
+
+            --if open_buffs == 1 then
+                --vim.cmd("Alpha")
+            --end
+        --end
+    --end
+--})

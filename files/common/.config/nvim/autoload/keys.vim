@@ -6,6 +6,7 @@ set timeoutlen=500
 nnoremap <silent> <Tab>l :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
+nnoremap <silent> <Tab>d :bd<cr>
 nnoremap <silent> <Tab><Tab> :NvimTreeFocus<cr>
 
 " telescope
@@ -445,7 +446,6 @@ EOF
 nnoremap <silent> <leader>gs :Telescope git_status<cr>
 nnoremap <silent> <leader>gl :Telescope git_commits<cr>
 nnoremap <silent> <leader>gb :Telescope git_branches<cr>
-
 lua << EOF
 local wk = require("which-key")
 
