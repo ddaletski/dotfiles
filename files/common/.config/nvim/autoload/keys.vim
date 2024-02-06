@@ -459,3 +459,21 @@ local n_only = {
 
 wk.register({g = n_only}, { prefix = "<leader>", mode = "n" })
 EOF
+
+"============= quitting ===================================
+
+nnoremap <silent> <leader>qq :bd<cr>
+nnoremap <silent> <leader>qQ :qa<cr>
+
+lua << EOF
+local wk = require("which-key")
+
+local n_only = {
+    name = "quit",
+    q = "close buffer",
+    Q = "quit vim",
+}
+
+wk.register({q = n_only}, { prefix = "<leader>", mode = "n" })
+EOF
+

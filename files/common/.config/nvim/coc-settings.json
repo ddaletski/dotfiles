@@ -34,6 +34,9 @@
             "command": "slint-lsp"
         }
     },
+    "markdownlint.config": {
+        "line-length": false
+    },
     "suggest.noselect": false,
     "sumneko-lua.enableNvimLuaDev": true,
     "Lua.telemetry.enable": false,

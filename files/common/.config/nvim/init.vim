@@ -16,10 +16,10 @@ endfor
 " needed. E.g. 'onehalfdark|dark'
 let g:themes_options = ['hemisu|light', 'materialbox|dark', 'one', 'pencil', 'solarized8_high|light']
 if SystemDarkMode()
-    colorscheme materialbox
+    colorscheme one
     set background=dark
 else
-    colorscheme hemisu
+    colorscheme one
     set background=light
 endif
 
