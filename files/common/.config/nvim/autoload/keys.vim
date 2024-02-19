@@ -48,6 +48,8 @@ nnoremap <silent> <cr> :noh<cr><cr>
 let g:NERDToggleCheckAllLines = 1
 nnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<cr>
 xnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'Toggle')<cr>
+nnoremap <silent> gcc :call nerdcommenter#Comment('n', 'Toggle')<cr>
+xnoremap <silent> gc :call nerdcommenter#Comment('n', 'Toggle')<cr>
 inoremap <silent> <C-_> <C-c>:call nerdcommenter#Comment('n', 'Toggle')<cr>
 
 function! s:show_documentation()
