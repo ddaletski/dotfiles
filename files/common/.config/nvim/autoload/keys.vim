@@ -150,7 +150,7 @@ EOF
 "==================== files ==============================
 "
 nnoremap <silent> <leader>ff :Telescope current_buffer_fuzzy_find<cr>
-nnoremap <silent> <leader>fF :Telescope live_grep<cr>
+nnoremap <silent> <leader>fF :lua TelescopeStatefulLiveGrep()<cr>
 nnoremap <silent> <leader>fr :CocCommand workspace.renameCurrentFile<cr>
 
 lua << EOF
