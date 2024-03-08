@@ -464,18 +464,15 @@ EOF
 
 "============= quitting ===================================
 
-nnoremap <silent> <leader>qq :bd<cr>
-nnoremap <silent> <leader>qQ :qa<cr>
+"disable :wq to prevent accidental window close
+:cabbrev wq w
+
+nnoremap <silent> <leader>q :bd<cr>
+nnoremap <silent> <leader>Q :qa<cr>
 
 lua << EOF
 local wk = require("which-key")
-
-local n_only = {
-    name = "quit",
-    q = "close buffer",
-    Q = "quit vim",
-}
-
-wk.register({q = n_only}, { prefix = "<leader>", mode = "n" })
+wk.register({q = "close buffer"}, { prefix = "<leader>", mode = "n" })
+wk.register({Q = "quit vim"}, { prefix = "<leader>", mode = "n" })
 EOF
 
