@@ -476,3 +476,10 @@ wk.register({q = "close buffer"}, { prefix = "<leader>", mode = "n" })
 wk.register({Q = "quit vim"}, { prefix = "<leader>", mode = "n" })
 EOF
 
+
+"================== codeium ===============================
+"
+imap <script><silent><nowait><expr> <C-l> codeium#Accept()
+imap <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <C-d>   <Cmd>call codeium#Clear()<CR>

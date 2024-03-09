@@ -26,7 +26,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'github/copilot.vim'
 Plug 'saecki/crates.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 
 
 " color schemes
@@ -69,6 +69,8 @@ let g:coc_global_extensions = [
 
 let g:NERDCreateDefaultMappings = 0 "disable default keys for NERDCommenter
 let g:rust_doc#define_map_K = 0 " disable default keys for rust-doc
+
+let g:codeium_disable_bindings = 1
 
 lua require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
 
