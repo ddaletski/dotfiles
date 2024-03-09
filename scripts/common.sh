@@ -22,3 +22,8 @@ colored() {
 
     echo -e "\033[${color}m${text_to_print}\033[m"
 }
+
+# check if command exists
+command_exists() {
+    command -v "$1" > /dev/null
+}
