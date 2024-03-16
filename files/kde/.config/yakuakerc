@@ -22,5 +22,8 @@ Favorites=
 
 [Window]
 Height=100
+KeepOpen=false
+ShowTabBar=false
+ShowTitleBar=false
 ToggleToFocus=true
 Width=100

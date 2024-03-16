@@ -60,9 +60,9 @@ CommandWindowWheel=Scroll
 
 [NightColor]
 Active=true
-LatitudeAuto=50.0529
-LongitudeAuto=19.9681
-NightTemperature=3100
+LatitudeAuto=52.2479
+LongitudeAuto=21.2892
+NightTemperature=3700
 
 [Plugins]
 desktopchangeosdEnabled=false
@@ -91,6 +91,18 @@ BorderAlternativeActivate=9
 DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 LayoutName=org.kde.breeze.desktop
+
+[Tiling]
+padding=4
+
+[Tiling][110c213e-9a34-56b0-8880-f9060a530879]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][bd455426-91b5-5aa4-b78c-9e21c3c810ab]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][f7e4df55-3cd1-5955-b9e5-cf5434b99894]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
 ActiveMouseScreen=true
@@ -125,6 +137,9 @@ ShadeHoverInterval=250
 SnapOnlyWhenOverlapping=false
 TitlebarDoubleClickCommand=Maximize
 WindowSnapZone=10
+
+[Xwayland]
+Scale=1.25
 
 [org.kde.kdecoration2]
 BorderSize=Normal
