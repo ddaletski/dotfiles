@@ -1,7 +1,3 @@
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
-set timeoutlen=500
-
 " buffers
 nnoremap <silent> <Tab>l :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>

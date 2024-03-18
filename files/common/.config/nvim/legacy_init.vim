@@ -3,18 +3,21 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 set nocompatible
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+set timeoutlen=500
 
 " load vim config files
 for file in ['plugins', 'themes', 'keys']
-    let fpath = $HOME . '/.config/nvim/autoload/' . file . '.vim'
-    exe 'source' fpath
+    let lua_init_path = $HOME . '/.config/nvim/autoload/' . file . '.vim'
+    exe 'source' lua_init_path
 endfor
 
 " Theme
 " available options for themes switcher
 " use '<scheme>|dark'/'<scheme>|light' format if only one bg style is
 " needed. E.g. 'onehalfdark|dark'
-let g:themes_options = ['hemisu|light', 'materialbox|dark', 'one', 'pencil', 'solarized8_high|light']
+let g:themes_options = ['one', 'solarized8_high|light']
 if SystemDarkMode()
     colorscheme one
     set background=dark
