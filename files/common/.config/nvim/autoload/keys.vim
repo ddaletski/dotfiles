@@ -3,7 +3,6 @@ nnoremap <silent> <Tab>l :Telescope buffers<cr>
 nnoremap <silent> <Tab>n :bn<cr>
 nnoremap <silent> <Tab>p :bp<cr>
 nnoremap <silent> <Tab>d :bd<cr>
-nnoremap <silent> <Tab><Tab> :NvimTreeFocus<cr>
 
 " telescope
 nnoremap ` :Telescope<cr>
@@ -197,7 +196,7 @@ function! OpenConfigDir() abort
     let vimrc = $MYVIMRC
     let vimDir = fnamemodify(vimrc, ':h')
     exe 'cd ' . vimDir
-    lua require 'telescope'.extensions.file_browser.file_browser()
+    lua require 'telescope'.extensions.file_browser.file_browser({ follow_symlinks = true })
 endfunction
 
 " reload init.vim and all autoload configs
@@ -471,11 +470,3 @@ local wk = require("which-key")
 wk.register({q = "close buffer"}, { prefix = "<leader>", mode = "n" })
 wk.register({Q = "quit vim"}, { prefix = "<leader>", mode = "n" })
 EOF
-
-
-"================== codeium ===============================
-"
-imap <script><silent><nowait><expr> <C-l> codeium#Accept()
-imap <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
-imap <C-d>   <Cmd>call codeium#Clear()<CR>

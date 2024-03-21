@@ -118,18 +118,5 @@ return {
 
         require("telescope").setup(opts)
         require("telescope").load_extension "file_browser"
-
-        -- open live grep with last query
-        local telescope = require('telescope.builtin')
-        local state = require("telescope.state")
-
-        function TelescopeStatefulLiveGrep()
-            local cached_pickers = state.get_global_key "cached_pickers"
-            if (cached_pickers ~= nil and cached_pickers[1].prompt_title == "Live Grep") then
-                telescope.resume()
-            else
-                telescope.live_grep()
-            end
-        end
     end
 }

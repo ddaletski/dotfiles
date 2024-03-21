@@ -62,15 +62,6 @@ local plugins = {
         }
     },
     {
-        "Exafunction/codeium.vim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        init = function()
-            vim.g.codeium_disable_bindings = 1
-        end
-    },
-    {
         "folke/neodev.nvim",
         opts = {
             lspconfig = false,
@@ -101,3 +92,17 @@ local plugins = {
 }
 
 require("lazy").setup(plugins)
+
+
+-- open live grep with last query
+local telescope = require('telescope.builtin')
+local state = require("telescope.state")
+
+function TelescopeStatefulLiveGrep()
+    local cached_pickers = state.get_global_key "cached_pickers"
+    if (cached_pickers ~= nil and cached_pickers[1].prompt_title == "Live Grep") then
+        telescope.resume()
+    else
+        telescope.live_grep()
+    end
+end
