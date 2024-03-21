@@ -1,5 +1,9 @@
 return {
     "goolord/alpha-nvim",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "nvim-lua/plenary.nvim",
+    },
     config = function()
         local path_ok, plenary_path = pcall(require, "plenary.path")
         if not path_ok then

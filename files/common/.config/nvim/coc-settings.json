@@ -39,11 +39,10 @@
     },
     "suggest.noselect": false,
     "sumneko-lua.enableNvimLuaDev": true,
-    "Lua.telemetry.enable": false,
     "python.analysis.useLibraryCodeForTypes": false,
     "hover.target": "float",
     "colors.enable": true,
     "rust-analyzer.procMacro.attributes.enable": true,
     "rust-analyzer.updates.channel": "stable",
-    "svelte.enable-ts-plugin": true
+    "rust-analyzer.updates.checkOnStartup": false
 }
