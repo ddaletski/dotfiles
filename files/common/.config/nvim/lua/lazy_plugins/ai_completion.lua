@@ -14,10 +14,12 @@ return {
             return vim.env.NVIM_AI_COMPLETION == "codeium"
         end,
         config = function()
-            vim.keymap.set("i", "<C-l>", "<Cmd>call codeium#Accept()<CR>", { silent = true, nowait = true, expr = true })
-            vim.keymap.set("i", "<C-n>", "<Cmd>call codeium#CycleCompletions(1)<CR>")
-            vim.keymap.set("i", "<C-p>", "<Cmd>call codeium#CycleCompletions(-1)<CR>")
-            vim.keymap.set("i", "<C-d>", "<Cmd>call codeium#Clear()<CR>")
+            vim.cmd([[
+            inoremap <silent><script><expr> <C-l> codeium#Accept()
+            inoremap <C-n> <cmd>call codeium#CycleCompletions(1)<cr>
+            inoremap <C-p> <cmd>call codeium#CycleCompletions(-1)<cr>
+            inoremap <silent><script><expr> <C-d> codeium#Clear()
+            ]])
         end
     },
     {
