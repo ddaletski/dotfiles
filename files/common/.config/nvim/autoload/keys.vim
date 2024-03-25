@@ -192,6 +192,13 @@ function! OpenAutoScript(name) abort
     execute 'edit ' . scriptPath
 endfunction
 
+function! OpenLuaScript(name) abort
+    let luaDir = AutoloadDir() . '/../lua'
+    let scriptPath = luaDir . '/' . a:name . '.lua'
+
+    execute 'edit ' . scriptPath
+endfunction
+
 function! OpenConfigDir() abort
     let vimrc = $MYVIMRC
     let vimDir = fnamemodify(vimrc, ':h')
@@ -209,7 +216,7 @@ nnoremap <silent> <Leader>vci :e $MYVIMRC<cr>
 " edit keys.vim
 nnoremap <silent> <Leader>vck :call OpenAutoScript('keys')<cr>
 " edit plugins.vim
-nnoremap <silent> <Leader>vcp :call OpenAutoScript('plugins')<cr>
+nnoremap <silent> <Leader>vcp :call OpenLuaScript('plugins')<cr>
 " open config dir
 nnoremap <silent> <Leader>vcd :call OpenConfigDir()<cr>
 
