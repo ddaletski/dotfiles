@@ -1,7 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# The following lines were added by compinstall
-#
 . /etc/profile
 . $HOME/.profile
 
@@ -23,8 +19,7 @@ zstyle :compinstall filename '/$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -33,36 +28,9 @@ unsetopt nobeep
 setopt histignorealldups  # If a new command is a duplicate, remove the older one
 setopt nocaseglob # Case insensitive globbing
 bindkey -v
-# End of lines configured by zsh-newuser-install
 
 PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
 cd ~
-
-
-case "$OSTYPE" in
-  darwin*)  
-	    alias grep='grep --color=auto'
-	    alias fgrep='fgrep --color=auto'
-	    alias egrep='egrep --color=auto' ;;
-  linux*)   
-	if [ -x /usr/bin/dircolors ]; then
-	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	    alias grep='grep --color=auto'
-	    alias fgrep='fgrep --color=auto'
-	    alias egrep='egrep --color=auto'
-        alias open='xdg-open'
-	fi ;;
-esac
-
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias svim='SPACEVIM=ON vim'
 
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
@@ -78,7 +46,7 @@ cdl() {
     cd `readlink $1`
 }
 
-export EDITOR=nvim
+export EDITOR=vim
 
 remove_from_path() {
     export PATH=$(echo $PATH | awk -v RS=: -v ORS=: "/$1/{next}{print}")
@@ -141,41 +109,6 @@ notify() {
     ffplay -autoexit -nodisp ~/.local/share/dotfiles-resources/notifications/done1.mp3 &> /dev/null & ; disown
 }
 
-# translator
-
-ru2en() {
-    echo $@ | parallel -n1 translate -s ru -d en '{}'
-}
-
-en2ru() {
-    echo $@ | parallel -n1 translate -s en -d ru '{}'
-}
-
-ru2pl() {
-    echo $@ | parallel -n1 translate -s ru -d pl '{}'
-}
-
-pl2ru() {
-    echo $@ | parallel -n1 translate -s pl -d ru '{}'
-}
-
-ru2de() {
-    echo $@ | parallel -n1 translate -s ru -d de '{}'
-}
-
-de2ru() {
-    echo $@ | parallel -n1 translate -s de -d ru '{}'
-}
-
-ru2fr() {
-    echo $@ | parallel -n1 translate -s ru -d fr '{}'
-}
-
-fr2ru() {
-    echo $@ | parallel -n1 translate -s fr -d ru '{}'
-}
-
-
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
@@ -186,45 +119,13 @@ man() {
     command man "$@"
 }
 
-# gnome themes
-gnome_dark() {
-    gsettings set org.gnome.desktop.interface gtk-theme Matcha-dark-azul
-    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-
-    BG_COLOR="'rgb(0x17, 0x14, 0x21)'"
-    FG_COLOR="'rgb(0xd0, 0xcf, 0xcc)'"
-
-    dconf write /com/github/amezin/ddterm/foreground-color $FG_COLOR
-    dconf write /com/github/amezin/ddterm/background-color $BG_COLOR
-}
-
-gnome_light() {
-    gsettings set org.gnome.desktop.interface gtk-theme Matcha-azul
-    gsettings set org.gnome.desktop.interface color-scheme prefer-light
-
-    BG_COLOR="'rgb(0xff, 0xff, 0xff)'"
-    FG_COLOR="'rgb(0x17, 0x14, 0x21)'"
-
-    dconf write /com/github/amezin/ddterm/foreground-color $FG_COLOR
-    dconf write /com/github/amezin/ddterm/background-color $BG_COLOR
-}
-
 #########
 # path
+
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d /home/linuxbrew/.linuxbrew/bin ] && export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 [ -d /opt/homebrew/bin ] && export PATH=$PATH:/opt/homebrew/bin
-
-#########
-# nvm
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use node
-
 [ -d ~/.cargo ] && export PATH=$PATH:$HOME/.cargo/bin
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #########
 # homebrew completions
@@ -237,5 +138,18 @@ then
 fi
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# init starship
-eval "$(starship init zsh)"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$($HOME/miniconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

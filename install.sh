@@ -56,14 +56,6 @@ fi
 
 bash $SRC_DIR/scripts/install_conda.sh
 
-# starship
-if ! command_exists starship; then
-    colored blue installing starship
-    mkdir -p $HOME/.local/bin
-    curl -sS https://starship.rs/install.sh | sh -s -- -y --bin-dir $HOME/.local/bin
-fi
-starship preset nerd-font-symbols -o ~/.config/starship.toml
-
 ##########################################################
 ############### symlink configs ##########################
 
