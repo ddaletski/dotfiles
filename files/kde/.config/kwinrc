@@ -60,8 +60,8 @@ CommandWindowWheel=Scroll
 
 [NightColor]
 Active=true
-LatitudeAuto=52.2479
-LongitudeAuto=21.2892
+LatitudeAuto=52.2484
+LongitudeAuto=21.0026
 NightTemperature=3700
 
 [Plugins]
@@ -90,7 +90,6 @@ BorderActivate=9
 BorderAlternativeActivate=9
 DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
-LayoutName=org.kde.breeze.desktop
 
 [Tiling]
 padding=4
@@ -147,5 +146,3 @@ BorderSizeAuto=false
 ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
-library=org.kde.breeze
-theme=Breeze
