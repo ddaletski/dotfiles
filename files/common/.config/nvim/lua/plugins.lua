@@ -53,7 +53,7 @@ local plugins = {
     {
         "saecki/crates.nvim",
         opts = {
-            src = {
+            completion = {
                 coq = {
                     enabled = true,
                     name = "crates.nvim",

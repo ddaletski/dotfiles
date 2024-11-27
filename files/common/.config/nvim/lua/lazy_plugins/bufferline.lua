@@ -1,6 +1,6 @@
 return {
     "akinsho/bufferline.nvim",
-    tag = "v4.8.0",
+    tag = "v4.6.0",
     opts = {
         options = {
             mode = "buffers",

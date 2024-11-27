@@ -1,7 +1,7 @@
 return {
     {
         "folke/which-key.nvim",
-
+        tag = "v2.1.0",
         options = {
             plugins = {
                 marks = true,    -- shows a list of your marks on ' and `

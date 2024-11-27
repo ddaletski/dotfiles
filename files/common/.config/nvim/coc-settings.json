@@ -44,5 +44,6 @@
     "colors.enable": true,
     "rust-analyzer.procMacro.attributes.enable": true,
     "rust-analyzer.updates.channel": "stable",
-    "rust-analyzer.updates.checkOnStartup": false
+    "rust-analyzer.updates.checkOnStartup": false,
+    "svelte.enable-ts-plugin": false
 }
